@@ -106,15 +106,15 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  return Object.entries(arr.filter( person => person.name === character )[0] )
-    .find(entry => { 
-      if (entry[2].length === 0 ) {
-        return true;
+  let result;
 
-      } else {
-        return false;
-      }
-    });
+  arr.forEach(person => {
+    if (person.name === character) {
+      Object.entries(person)[2][1].length === 0 ? result = false : result = true;
+    }
+  });
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,7 +124,23 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+  let characterCount = 0;
+
+  arr.forEach(person => {
+    characterCount++;
+    if (person.spouse) {
+      characterCount++;
+    }
+
+    if (person.children.length > 0) {
+      for (let child of person.children) {
+        characterCount++;
+      }
+    }
+
+  });
+
+  return characterCount;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,7 +155,30 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
   const sizes = [];
-  // Solution code here...
+
+  arr.forEach(person => {
+    let house = person.house;
+    let houseMembers = 0;
+    houseMembers++;
+
+    if (person.spouse) {
+      houseMembers++;
+    }
+
+    if (person.children.length > 0) {
+      for (let child of person.children) {
+        houseMembers++;
+      }
+    }
+
+    let houseCount = {
+      house: house,
+      members: houseMembers
+    };
+
+    sizes.push(houseCount);
+  });
+
   return sizes;
 };
 
@@ -163,7 +202,34 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
-  // Solution code here...
+
+  arr.forEach(person => {
+    let house = person.house;
+    let houseMembers = 0;
+    houseMembers++;
+
+    if (person.spouse) {
+      houseMembers++;
+
+      if (deceasedSpouses.includes(person.spouse)) {
+        houseMembers--;
+      }
+    }
+
+    if (person.children.length > 0) {
+      for (let child of person.children) {
+        houseMembers++;
+      }
+    }
+
+    let houseCount = {
+      house: house,
+      members: houseMembers
+    };
+
+    survivors.push(houseCount);
+  });
+
   return survivors;
 };
 
@@ -211,20 +277,20 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the number of characters in the array', () => {
     expect(totalCharacters(characters)).toStrictEqual(27);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return an object for each house containing the name and size', () => {
     expect(houseSize(characters)).toStrictEqual([{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, { house: 'Lannister', members: 5 }, { house: 'Targaryen', members: 5 }, { house: 'Tyrell', members: 4 }, { house: 'Stark', members: 2 }, { house: 'Snow', members: 1 }]);
     expect(houseSize(characters).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should not include any deceased spouses', () => {
     expect(houseSurvivors(characters)).toStrictEqual([{ house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, { house: 'Lannister', members: 4 }, { house: 'Targaryen', members: 4 }, { house: 'Tyrell', members: 3 }, { house: 'Stark', members: 2 }, { house: 'Snow', members: 1 }]);
   });
