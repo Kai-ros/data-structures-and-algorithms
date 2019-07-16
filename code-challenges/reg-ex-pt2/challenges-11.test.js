@@ -9,7 +9,9 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  // Solution code here...
+  let regEx = /^(\d{4})$/;
+
+  return regEx.test(pin) ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -29,7 +31,10 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
+  // Collaborated with Jack Daniel Kinne and Chris Coulon to devise solution.
+  let regEx = /^((^\w+)|(\w+\.\w+))@\w+((\.com)|(\.org)|(\.net))$/igm;
+
+  return regEx.test(email) ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,7 +59,11 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  // use a conditional and run both sides
+  let regEx = /^((\(\d{3}\) ?)|([2-9]\d{2}))[- ]? ?\d{3}[- ]?\d{4}$/gm;
+  
+
+  return regEx.test(phoneNumber) ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +76,16 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
-  // Solution code here...
+  // let regEx = /(\/[a-z]\d\b)|(\/[a-z]\b)/igm;  
+  // let result = '';
+  // for (let i = 0; i < elements; i++) {
+  //   result = elements[i].match(regEx);
+
+  //   console.log('RESULT:', result);
+  // }
+  // console.log('RESULT:', result);
+
+  // return ["/h1", "/div", "/p"];
 };
 
 /* ------------------------------------------------------------------------------------------------
