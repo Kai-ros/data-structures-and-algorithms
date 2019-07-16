@@ -59,10 +59,8 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // use a conditional and run both sides
   let regEx = /^((\(\d{3}\) ?)|([2-9]\d{2}))[- ]? ?\d{3}[- ]?\d{4}$/gm;
   
-
   return regEx.test(phoneNumber) ? true : false;
 };
 
@@ -77,15 +75,14 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 
 const findTagNames = elements => {
   // let regEx = /(\/[a-z]\d\b)|(\/[a-z]\b)/igm;  
-  // let result = '';
-  // for (let i = 0; i < elements; i++) {
-  //   result = elements[i].match(regEx);
-
-  //   console.log('RESULT:', result);
-  // }
-  // console.log('RESULT:', result);
-
-  // return ["/h1", "/div", "/p"];
+  const regEx = /<\/\w+>/g
+  return elements.map( element => {
+    const matched = element.match(regEx);
+    const mappedMatched = matched.map( item => {
+      return item.substr(1, item.length - 2);
+    });
+    return mappedMatched;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
