@@ -33,16 +33,15 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = arr => {
-  arr.map(element =>
-    element.reduce((returnString, innerString) => {
-      returnString = returnString.concat(innerString.substring(1, 4));
-      returnString = returnString.concat(innerString.substring(6, 9));
-      returnString = returnString.concat(innerString.substring(10, 14));
-      console.log("returnString: ", returnString);
+  return arr.map(innerString => {
+    let returnString = "";
+    returnString = returnString
+      .concat(innerString.substring(1, 4))
+      .concat(innerString.substring(6, 9))
+      .concat(innerString.substring(10, 14));
 
-      return returnString;
-    }, "")
-  );
+    return returnString;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,7 +53,13 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = str => {
-  // Solution code here...
+  return str
+    .split("")
+    .reduce(
+      (concatString, letter, index) =>
+        index % 2 ? (concatString = concatString.concat(letter)) : concatString,
+      ""
+    );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,7 +69,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = arr => {
-  // Solution code here...
+  return arr.every(string => string.includes(":)"));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,7 +79,7 @@ Write a function named findAnything that takes in an array of strings, along wit
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
+  return arr.filter(string => string.includes(target));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,7 +89,7 @@ Write a function named findEvery that takes in an array of strings, along with a
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+  return arr.every(string => string.includes(target));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,7 +105,7 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = arr => {
-  // Solution code here...
+  return arr.map(roster => roster.filter(name => !name.includes("Brook")));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,7 +140,7 @@ const daysOfWeek = [
 ];
 
 const sortByDay = arr => {
-  // Solution code here...
+  return daysOfWeek.map(day => arr.filter(string => string.includes(day)));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -147,7 +152,7 @@ For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 ------------------------------------------------------------------------------------------------ */
 
 const characterByIndex = arr => {
-  // Solution code here...
+  return arr.map((string, index) => string.charAt(index));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -211,7 +216,7 @@ describe("Testing challenge 3", () => {
   });
 });
 
-xdescribe("Testing challenge 4", () => {
+describe("Testing challenge 4", () => {
   test("It should only return the odd indexed characters from the string", () => {
     expect(onlyOddChars("0123456789")).toStrictEqual("13579");
     expect(onlyOddChars("abcd")).toStrictEqual("bd");
@@ -220,7 +225,7 @@ xdescribe("Testing challenge 4", () => {
   });
 });
 
-xdescribe("Testing challenge 5", () => {
+describe("Testing challenge 5", () => {
   test("It should correctly assess whether all the strings are happy", () => {
     const words = [
       "things",
@@ -238,7 +243,7 @@ xdescribe("Testing challenge 5", () => {
   });
 });
 
-xdescribe("Testing challenge 6", () => {
+describe("Testing challenge 6", () => {
   test("It should find all the strings that contain a given string", () => {
     const words = [
       "things",
@@ -256,7 +261,7 @@ xdescribe("Testing challenge 6", () => {
   });
 });
 
-xdescribe("Testing challenge 7", () => {
+describe("Testing challenge 7", () => {
   test("It should determine whether all the strings contain a given string", () => {
     const words = [
       "things",
@@ -272,7 +277,7 @@ xdescribe("Testing challenge 7", () => {
   });
 });
 
-xdescribe("Testing challenge 8", () => {
+describe("Testing challenge 8", () => {
   test("It should remove Brook from all courses", () => {
     const roster = [
       ["Michelle", "Allie", "Brook TESTING"],
@@ -292,7 +297,7 @@ xdescribe("Testing challenge 8", () => {
   });
 });
 
-xdescribe("Testing challenge 9", () => {
+describe("Testing challenge 9", () => {
   test("It should sort events by the day on which they happen", () => {
     const events = [
       "Dancing on Mondays and Tuesdays",
@@ -342,7 +347,7 @@ xdescribe("Testing challenge 9", () => {
   });
 });
 
-xdescribe("Testing challenge 10", () => {
+describe("Testing challenge 10", () => {
   test("It should return the ith character of the ith string", () => {
     const words = ["apple", "banana", "cantaloupe"];
 
