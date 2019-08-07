@@ -1,4 +1,4 @@
-package code401challenges.arrayReverse.src;
+package code401challenges;
 
 import java.util.Arrays;
 
