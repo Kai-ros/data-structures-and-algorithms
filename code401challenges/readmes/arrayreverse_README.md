@@ -10,4 +10,4 @@ My partner and I utilized the two-pointer technique to solve the problem. The fi
 The time complexity of this solution is O(n) and the space complexity is O(1),
 
 ## Solution
-![Whiteboard image of reverse array.](/assets/reverseAnArray.jpg)
+![Whiteboard image of reverse array.](../assets/reverseArray.jpg)
