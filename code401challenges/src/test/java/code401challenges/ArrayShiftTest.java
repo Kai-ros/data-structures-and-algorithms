@@ -6,7 +6,6 @@ import static org.junit.Assert.*;
 
 public class ArrayShiftTest {
 
-
     @Test
     public void insertShiftArray_EvenArrayLength() {
         assertArrayEquals(
