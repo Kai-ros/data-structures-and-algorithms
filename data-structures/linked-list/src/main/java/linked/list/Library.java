@@ -23,5 +23,17 @@ public class Library {
         System.out.println(result);
         System.out.println(linkedList.toString());
 
+        LinkedList stringList = new LinkedList();
+
+        stringList.insert("Exelon");
+        stringList.insert("Bravo");
+
+        boolean stringResultTrue = stringList.includes("Bravo");
+        boolean stringResultFalse = stringList.includes("Delta");
+
+        System.out.println(stringResultTrue);
+        System.out.println(stringResultFalse);
+        System.out.println(stringList.toString());
+
     }
 }

@@ -1,12 +1,12 @@
 package linked.list;
 
-public class LinkedList
+public class LinkedList <Type>
 {
-    Node head;
+    Node <Type> head;
 
-    public void insert(Object data)
+    public void insert(Type data)
     {
-        Node newNode = new Node(data);
+        Node <Type> newNode = new Node(data);
 
         if (head == null)
         {
@@ -20,14 +20,13 @@ public class LinkedList
     public boolean includes(Object data)
     {
         Node currentNode = head;
-        boolean result = false;
 
         while (currentNode != null)
         {
-            if (currentNode.data == data) result = true;
+            if (currentNode.data == data) return true;
             currentNode =  currentNode.next;
         }
-        return result;
+        return false;
     }
 
     public String toString()
