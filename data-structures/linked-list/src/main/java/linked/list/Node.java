@@ -1,13 +1,13 @@
 package linked.list;
 
-public class Node
+public class Node <Type>
 {
-    Object data;
-    Node next;
+    Type data;
+    Node <Type> next;
 
     // Constructor
     // Next is null by default
-    Node(Object dataValue)
+    Node(Type dataValue)
     {
         this.data = dataValue;
         this.next = null;
