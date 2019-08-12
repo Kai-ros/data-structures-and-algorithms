@@ -3,8 +3,25 @@
  */
 package linked.list;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 public class Library {
-    public boolean someLibraryMethod() {
-        return true;
+
+    public static void main(String[] args) {
+        LinkedList linkedList = new LinkedList();
+        System.out.println(linkedList.toString());
+
+        linkedList.insert(12);
+        linkedList.insert(4);
+        linkedList.insert(1);
+        linkedList.insert(8);
+        linkedList.insert(19);
+        linkedList.insert(3);
+
+        boolean result = linkedList.includes(12);
+
+        System.out.println(result);
+        System.out.println(linkedList.toString());
+
     }
 }

@@ -6,9 +6,114 @@ package linked.list;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class LibraryTest {
-    @Test public void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+public class LibraryTest
+{
+    @Test
+    public void testLinkedList()
+    {
+        LinkedList linkedList = new LinkedList();
+        String testMessage = linkedList.toString();
+
+        assertEquals(
+                "Instantiating a new linked list should return an empty linked list.",
+                "This linked list currently contains no data.",
+                testMessage);
+    }
+
+    @Test
+    public void testLinkedList_Head()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.insert("Head");
+        String testMessage = linkedList.toString();
+
+        assertEquals(
+                "Head should be the first index of the linked list.",
+                "Data at node position 0 is Head.\n",
+                testMessage);
+    }
+
+    @Test
+    public void testLinkedList_Insert()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.insert(12);
+        linkedList.insert(4);
+        String testMessage = linkedList.toString();
+
+        assertEquals(
+                "Inserting elements to the linked list should occur in FILO order.",
+                "Data at node position 0 is 4.\n" +
+                        "Data at node position 1 is 12.\n",
+                testMessage);
+    }
+
+    @Test
+    public void testLinkedList_InsertMany()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.insert(12);
+        linkedList.insert(4);
+        linkedList.insert(1);
+        linkedList.insert(8);
+        linkedList.insert(19);
+        linkedList.insert(3);
+        String testMessage = linkedList.toString();
+
+        assertEquals(
+                "Many elements can be inserted into the linked list.",
+                "Data at node position 0 is 3.\n" +
+                        "Data at node position 1 is 19.\n" +
+                        "Data at node position 2 is 8.\n" +
+                        "Data at node position 3 is 1.\n" +
+                        "Data at node position 4 is 4.\n" +
+                        "Data at node position 5 is 12.\n",
+                testMessage);
+    }
+
+    @Test
+    public void testLinkedList_ToString()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.insert(12);
+        String testMessage = linkedList.toString();
+
+        assertEquals(
+                "ToString method should provide index location of elements.",
+                "Data at node position 0 is 12.\n",
+                testMessage);
+    }
+
+    @Test
+    public void testLinkedList_DataTypes()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.insert("TEST");
+        String testMessage = linkedList.toString();
+
+        assertEquals(
+                "ToString method should store datat of any type.",
+                "Data at node position 0 is TEST.\n",
+                testMessage);
+    }
+
+    @Test
+    public void testLinkedList_IncludesTrue()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.insert("TEST");
+        boolean testValue = linkedList.includes("TEST");
+
+        assertTrue("ToString method should return true if data is present.", testValue);
+    }
+
+    @Test
+    public void testLinkedList_IncludesFalse()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.insert("TEST");
+        boolean testValue = linkedList.includes("NOT HERE");
+
+        assertFalse("ToString method should return true if data is present.", testValue);
     }
 }
