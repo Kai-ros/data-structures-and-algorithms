@@ -17,9 +17,9 @@ public class LinkedList <Type>
         }
     }
 
-    public boolean includes(Object data)
+    public boolean includes(Type data)
     {
-        Node currentNode = head;
+        Node <Type> currentNode = head;
 
         while (currentNode != null)
         {
@@ -31,7 +31,7 @@ public class LinkedList <Type>
 
     public String toString()
     {
-        Node currentNode = head;
+        Node <Type> currentNode = head;
         StringBuilder output = new StringBuilder();
         int iterator = 0;
 
