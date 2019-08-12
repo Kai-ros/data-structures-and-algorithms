@@ -4,14 +4,14 @@ This repo shows the expected file structure for Code 401: Java data structures &
 
 This root README is where the links to daily work should live.
 
-## Code Challenge 
+## Code Challenges 
 * [Reverse an Array](./readmes/arrayreverse_README.md)
 * [Shift an Array](./readmes/arrayshift_README.md)
 * [Binary Search an Array](./readmes/binarysearch_README.md)
 
 
 ## Labs
-* [Singly Linked List](./data-structures/linkedlist_README.md)
+* [Singly Linked List](./data-structures/linked-list/linkedlist_README.md)
 
 
 
