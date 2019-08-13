@@ -11,22 +11,46 @@ public class Library {
         LinkedList linkedList = new LinkedList();
         System.out.println(linkedList.toString());
 
-        linkedList.insert(12);
-        linkedList.insert(4);
-        linkedList.insert(1);
-        linkedList.insert(8);
-        linkedList.insert(19);
-        linkedList.insert(3);
+        linkedList.prepend(12);
+        linkedList.prepend(4);
+        linkedList.prepend(1);
+        linkedList.append(17);
+        linkedList.append(42);
+        linkedList.append(6);
+
+        System.out.println(linkedList.toString());
 
         boolean result = linkedList.includes(12);
+
+        linkedList.insertAfter(42, 99);
+        System.out.println(linkedList.toString());
+
+        linkedList.insertAfter(1, 88);
+        System.out.println(linkedList.toString());
+
+        linkedList.insertAfter(6, 77);
+        System.out.println(linkedList.toString());
+
+        linkedList.insertAfter(77, 82);
+        System.out.println(linkedList.toString());
+
+
+        linkedList.insertBefore(1, 62);
+        System.out.println(linkedList.toString());
+
+        linkedList.insertBefore(17, 59);
+        System.out.println(linkedList.toString());
+
+        linkedList.insertBefore(82, 44);
+        System.out.println(linkedList.toString());
 
         System.out.println(result);
         System.out.println(linkedList.toString());
 
         LinkedList stringList = new LinkedList();
 
-        stringList.insert("Exelon");
-        stringList.insert("Bravo");
+        stringList.prepend("Exelon");
+        stringList.prepend("Bravo");
 
         boolean stringResultTrue = stringList.includes("Bravo");
         boolean stringResultFalse = stringList.includes("Delta");

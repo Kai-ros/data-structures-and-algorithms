@@ -15,7 +15,12 @@ I read through the assignment requirements and then read through online document
 
 ## API
 ```
-insert()
+prepend()
+append()
+insertBefore()
+insertAfter()
 includes()
 toString()
 ```
+## Whiteboards
+* [Linked List Methods Whiteboard](./assets/ll_insertions.jpg)
