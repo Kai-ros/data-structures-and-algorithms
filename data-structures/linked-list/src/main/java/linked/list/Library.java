@@ -3,65 +3,11 @@
  */
 package linked.list;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
 public class Library {
 
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        System.out.println(linkedList.toString());
 
-        linkedList.prepend(12);
-        linkedList.prepend(4);
-        linkedList.prepend(1);
-        linkedList.append(17);
-        linkedList.append(42);
-        linkedList.append(6);
-
-        System.out.println(linkedList.toString());
-
-        boolean result = linkedList.includes(12);
-
-        linkedList.insertAfter(42, 99);
-        System.out.println(linkedList.toString());
-
-        linkedList.insertAfter(1, 88);
-        System.out.println(linkedList.toString());
-
-        linkedList.insertAfter(6, 77);
-        System.out.println(linkedList.toString());
-
-        linkedList.insertAfter(77, 82);
-        System.out.println(linkedList.toString());
-
-
-        linkedList.insertBefore(1, 62);
-        System.out.println(linkedList.toString());
-
-        linkedList.insertBefore(17, 59);
-        System.out.println(linkedList.toString());
-
-        linkedList.insertBefore(82, 44);
-        System.out.println(linkedList.toString());
-
-        System.out.println(result);
-        System.out.println(linkedList.toString());
-
-
-
-        LinkedList stringList = new LinkedList();
-
-        stringList.prepend("Exelon");
-
-
-        stringList.prepend("Bravo");
-
-        boolean stringResultTrue = stringList.includes("Bravo");
-        boolean stringResultFalse = stringList.includes("Delta");
-
-        System.out.println(stringResultTrue);
-        System.out.println(stringResultFalse);
-        System.out.println(stringList.toString());
 
     }
 }
