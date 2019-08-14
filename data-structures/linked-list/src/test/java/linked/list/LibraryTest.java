@@ -24,7 +24,7 @@ public class LibraryTest
     public void testLinkedList_Head()
     {
         LinkedList linkedList = new LinkedList();
-        linkedList.insert("Head");
+        linkedList.prepend("Head");
         String testMessage = linkedList.toString();
 
         assertEquals(
@@ -37,8 +37,8 @@ public class LibraryTest
     public void testLinkedList_Insert()
     {
         LinkedList linkedList = new LinkedList();
-        linkedList.insert(12);
-        linkedList.insert(4);
+        linkedList.prepend(12);
+        linkedList.prepend(4);
         String testMessage = linkedList.toString();
 
         assertEquals(
@@ -52,12 +52,12 @@ public class LibraryTest
     public void testLinkedList_InsertMany()
     {
         LinkedList linkedList = new LinkedList();
-        linkedList.insert(12);
-        linkedList.insert(4);
-        linkedList.insert(1);
-        linkedList.insert(8);
-        linkedList.insert(19);
-        linkedList.insert(3);
+        linkedList.prepend(12);
+        linkedList.prepend(4);
+        linkedList.prepend(1);
+        linkedList.prepend(8);
+        linkedList.prepend(19);
+        linkedList.prepend(3);
         String testMessage = linkedList.toString();
 
         assertEquals(
@@ -75,7 +75,7 @@ public class LibraryTest
     public void testLinkedList_ToString()
     {
         LinkedList linkedList = new LinkedList();
-        linkedList.insert(12);
+        linkedList.prepend(12);
         String testMessage = linkedList.toString();
 
         assertEquals(
@@ -88,11 +88,11 @@ public class LibraryTest
     public void testLinkedList_DataTypes()
     {
         LinkedList linkedList = new LinkedList();
-        linkedList.insert("TEST");
+        linkedList.prepend("TEST");
         String testMessage = linkedList.toString();
 
         assertEquals(
-                "ToString method should store datat of any type.",
+                "ToString method should store data of any type.",
                 "Data at node position 0 is TEST.\n",
                 testMessage);
     }
@@ -101,7 +101,7 @@ public class LibraryTest
     public void testLinkedList_IncludesTrue()
     {
         LinkedList linkedList = new LinkedList();
-        linkedList.insert("TEST");
+        linkedList.prepend("TEST");
         boolean testValue = linkedList.includes("TEST");
 
         assertTrue("ToString method should return true if data is present.", testValue);
@@ -111,9 +111,76 @@ public class LibraryTest
     public void testLinkedList_IncludesFalse()
     {
         LinkedList linkedList = new LinkedList();
-        linkedList.insert("TEST");
+        linkedList.prepend("TEST");
         boolean testValue = linkedList.includes("NOT HERE");
 
         assertFalse("ToString method should return true if data is present.", testValue);
     }
+
+    @Test
+    public void testLinkedList_KthFromEnd()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.prepend(12);
+        linkedList.prepend(4);
+        linkedList.prepend(1);
+        linkedList.prepend(8);
+        linkedList.prepend(19);
+        linkedList.prepend(3);
+
+        assertEquals(
+                "KthFromEnd method should return the correct value at the Kth index.",
+                1,
+                linkedList.kthFromEnd(3));
+    }
+
+    @Test
+    public void testLinkedList_KthFromEndLinkedListContainsOnlyHead()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.prepend(12);
+
+        assertEquals(
+                "KthFromEnd method should return the correct value at the Kth index.",
+                12,
+                linkedList.kthFromEnd(1));
+    }
+
+    @Test
+    public void testLinkedList_KthFromEndKIsSameSizeAsLinkedList()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.prepend(12);
+        linkedList.prepend(4);
+        linkedList.prepend(1);
+        linkedList.prepend(8);
+        linkedList.prepend(19);
+        linkedList.prepend(3);
+
+        assertEquals(
+                "KthFromEnd method should return the correct value at the Kth index.",
+                3,
+                linkedList.kthFromEnd(6));
+    }
+
+    @Test (expected = ArrayIndexOutOfBoundsException.class)
+    public void testLinkedList_KthFromEndNegativeValue()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.prepend(12);
+        linkedList.prepend(4);
+
+        linkedList.kthFromEnd(-6);
+    }
+
+    @Test (expected = ArrayIndexOutOfBoundsException.class)
+    public void testLinkedList_KthFromEndKIsLargerThanLinkedList()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.prepend(12);
+        linkedList.prepend(4);
+
+        linkedList.kthFromEnd(12);
+    }
+
 }

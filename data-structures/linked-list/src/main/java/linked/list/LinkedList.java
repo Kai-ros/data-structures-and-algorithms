@@ -1,5 +1,8 @@
 package linked.list;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LinkedList <Type>
 {
     Node <Type> head;
@@ -126,7 +129,28 @@ public class LinkedList <Type>
         return outputString.toString();
     }
 
+    public int kthFromEnd(int k)
+    {
+        List<Integer> arrayList = new ArrayList<>();
+        Node <Type> currentNode = head;
 
+        if ((currentNode == null) || (k < 1))
+        {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        while (currentNode != null)
+        {
+            arrayList.add((Integer)currentNode.data);
+            currentNode = currentNode.next;
+        }
+        if (arrayList.size() < k)
+        {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        int returnIndex = arrayList.size() - k;
+
+        return arrayList.get(returnIndex);
+    }
 }
 
 // Resources:
@@ -134,3 +158,5 @@ public class LinkedList <Type>
 // https://crunchify.com/how-to-implement-a-linkedlist-class-from-scratch-in-java/
 // https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html
 // https://www.javatpoint.com/java-program-to-create-and-display-a-singly-linked-list
+// https://www.baeldung.com/junit-assert-exception
+// https://www.geeksforgeeks.org/types-of-exception-in-java-with-examples/

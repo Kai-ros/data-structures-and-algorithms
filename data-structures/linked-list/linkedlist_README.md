@@ -1,5 +1,5 @@
 ## Singly Linked List
-* Code Fellows - Java 401 Lab 05: Implement a Singly Linked List Data Structure
+* Code Fellows - Java 401 Implement a Singly Linked List Data Structure
 
 ## Challenge
 * Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
@@ -21,6 +21,8 @@ insertBefore()
 insertAfter()
 includes()
 toString()
+kthFromEnd()
 ```
 ## Whiteboards
-* [Linked List Methods Whiteboard](./assets/ll_insertions.jpg)
+* [Linked List Insertion Methods Whiteboard](./assets/ll_insertions.jpg)
+* [Linked List KthFromEnd Method Whiteboard](./assets/ll_kth_from_end.jpg)
