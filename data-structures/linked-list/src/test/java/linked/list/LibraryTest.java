@@ -34,7 +34,7 @@ public class LibraryTest
     }
 
     @Test
-    public void testLinkedList_Insert()
+    public void testLinkedList_Prepend()
     {
         LinkedList linkedList = new LinkedList();
         linkedList.prepend(12);
@@ -49,7 +49,7 @@ public class LibraryTest
     }
 
     @Test
-    public void testLinkedList_InsertMany()
+    public void testLinkedList_PrependMany()
     {
         LinkedList linkedList = new LinkedList();
         linkedList.prepend(12);
@@ -115,6 +115,136 @@ public class LibraryTest
         boolean testValue = linkedList.includes("NOT HERE");
 
         assertFalse("ToString method should return true if data is present.", testValue);
+    }
+
+    @Test
+    public void testLinkedList_Append()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.append(12);
+        String testMessage = linkedList.toString();
+
+        assertEquals(
+                "Append method should add the correct value at the end of the linked list.",
+                "Data at node position 0 is 12.\n",
+                testMessage);
+    }
+
+    @Test
+    public void testLinkedList_AppendMany()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.append(12);
+        linkedList.append(4);
+        linkedList.append(1);
+        String testMessage = linkedList.toString();
+
+        assertEquals(
+                "Append method should add many values at the end of the linked list.",
+                "Data at node position 0 is 12.\n" +
+                        "Data at node position 1 is 4.\n" +
+                        "Data at node position 2 is 1.\n",
+                testMessage);
+    }
+
+    @Test
+    public void testLinkedList_InsertBefore()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.prepend(12);
+        linkedList.prepend(4);
+        linkedList.prepend(1);
+        linkedList.prepend(8);
+        linkedList.prepend(19);
+        linkedList.prepend(3);
+        linkedList.insertBefore(1, 62);
+        String testMessage = linkedList.toString();
+
+        assertEquals(
+                "Insert before method should add correct number prior to the target value.",
+                "Data at node position 0 is 3.\n" +
+                        "Data at node position 1 is 19.\n" +
+                        "Data at node position 2 is 8.\n" +
+                        "Data at node position 3 is 62.\n" +
+                        "Data at node position 4 is 1.\n" +
+                        "Data at node position 5 is 4.\n" +
+                        "Data at node position 6 is 12.\n",
+                testMessage);
+    }
+
+    @Test
+    public void testLinkedList_InsertBeforeFirstNode()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.prepend(12);
+        linkedList.prepend(4);
+        linkedList.prepend(1);
+        linkedList.prepend(8);
+        linkedList.prepend(19);
+        linkedList.prepend(3);
+        linkedList.insertBefore(3, 44);
+        String testMessage = linkedList.toString();
+
+        assertEquals(
+                "Insert before method should add correct number prior to the target value.",
+                "Data at node position 0 is 44.\n" +
+                        "Data at node position 1 is 3.\n" +
+                        "Data at node position 2 is 19.\n" +
+                        "Data at node position 3 is 8.\n" +
+                        "Data at node position 4 is 1.\n" +
+                        "Data at node position 5 is 4.\n" +
+                        "Data at node position 6 is 12.\n",
+                testMessage);
+    }
+
+    @Test
+    public void testLinkedList_InsertAfter()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.prepend(12);
+        linkedList.prepend(4);
+        linkedList.prepend(1);
+        linkedList.prepend(8);
+        linkedList.prepend(19);
+        linkedList.prepend(3);
+        linkedList.insertAfter(1, 62);
+        String testMessage = linkedList.toString();
+
+        assertEquals(
+                "Insert before method should add correct number prior to the target value.",
+                "Data at node position 0 is 3.\n" +
+                        "Data at node position 1 is 19.\n" +
+                        "Data at node position 2 is 8.\n" +
+                        "Data at node position 3 is 1.\n" +
+                        "Data at node position 4 is 62.\n" +
+                        "Data at node position 5 is 4.\n" +
+                        "Data at node position 6 is 12.\n",
+                testMessage);
+    }
+
+    @Test
+    public void testLinkedList_InsertAfterLastNode()
+    {
+        LinkedList linkedList = new LinkedList();
+        linkedList.prepend(12);
+        linkedList.prepend(4);
+        linkedList.prepend(1);
+        linkedList.prepend(8);
+        linkedList.prepend(19);
+        linkedList.prepend(3);
+        linkedList.insertAfter(12, 44);
+        String testMessage = linkedList.toString();
+
+        assertEquals(
+                "Insert before method should add correct number prior to the target value.",
+                "Data at node position 0 is 3.\n" +
+                        "Data at node position 1 is 19.\n" +
+                        "Data at node position 2 is 8.\n" +
+                        "Data at node position 3 is 1.\n" +
+                        "Data at node position 4 is 4.\n" +
+                        "Data at node position 5 is 12.\n" +
+                        "Data at node position 6 is 44.\n",
+                testMessage);
     }
 
     @Test

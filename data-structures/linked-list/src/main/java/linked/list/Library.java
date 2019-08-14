@@ -47,18 +47,9 @@ public class Library {
         System.out.println(result);
         System.out.println(linkedList.toString());
 
-        int kthResult = linkedList.kthFromEnd(4);
-        System.out.println(kthResult);
+
 
         LinkedList stringList = new LinkedList();
-
-//        int kthStringResult1 = stringList.kthFromEnd(0);
-//        System.out.println(kthStringResult1);
-
-        stringList.prepend(12);
-
-        int kthStringResult2 = stringList.kthFromEnd(1);
-        System.out.println(kthStringResult2);
 
         stringList.prepend("Exelon");
 

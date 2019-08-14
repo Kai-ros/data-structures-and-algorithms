@@ -32,7 +32,11 @@ public class LinkedList <Type>
         Node <Type> newNode = new Node(dataValue);
         Node <Type> currentNode = head;
 
-        if (currentNode != null)
+        if (head == null)
+        {
+            head = newNode;
+        }
+        else if (currentNode != null)
         {
             while (currentNode.next != null)
             {
