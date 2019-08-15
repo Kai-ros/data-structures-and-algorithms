@@ -155,6 +155,52 @@ public class LinkedList <Type>
 
         return arrayList.get(returnIndex);
     }
+
+    // Function to combine two linked lists into one using zipper method.
+    public Node<Type> mergeLists(LinkedList<Type> linkedList1, LinkedList<Type> linkedList2 )
+    {
+        if (linkedList1.head == null) { return linkedList2.head; }
+        if (linkedList2.head == null) { return linkedList1.head; }
+
+        Node <Type> newHead = linkedList1.head;
+        Node <Type> mergeCurrent = newHead;
+        Node <Type> linkedList1Current = linkedList1.head.next;
+        Node <Type> linkedList2Current = linkedList2.head;
+
+        // Loop to traverse between the two linked lists and merge them together.
+        while ((linkedList1Current != null) && (linkedList2Current != null))
+        {
+            // Adds a node from linkedList2 and moves its current node forward.
+            mergeCurrent.next = linkedList2Current;
+            mergeCurrent = mergeCurrent.next;
+            linkedList2Current = linkedList2Current.next;
+
+            // Adds a node from linkedList1 and moves its current node forward.
+            mergeCurrent.next = linkedList1Current;
+            mergeCurrent = mergeCurrent.next;
+            linkedList1Current = linkedList1Current.next;
+        }
+
+        // Accounts for if list 1 is longer than list 2.
+        while (linkedList1Current != null)
+        {
+            // Adds a node from linkedList1 and moves its current node forward.
+            mergeCurrent.next = linkedList1Current;
+            mergeCurrent = mergeCurrent.next;
+            linkedList1Current = linkedList1Current.next;
+        }
+
+        // Accounts for if list 2 is longer than list 1.
+        while (linkedList2Current != null)
+        {
+            // Adds a node from linkedList2 and moves its current node forward.
+            mergeCurrent.next = linkedList2Current;
+            mergeCurrent = mergeCurrent.next;
+            linkedList2Current = linkedList2Current.next;
+        }
+
+        return newHead;
+    }
 }
 
 // Resources:

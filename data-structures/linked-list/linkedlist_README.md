@@ -22,7 +22,9 @@ insertAfter()
 includes()
 toString()
 kthFromEnd()
+mergeLists()
 ```
 ## Whiteboards
 * [Linked List Insertion Methods Whiteboard](./assets/ll_insertions.jpg)
 * [Linked List KthFromEnd Method Whiteboard](./assets/ll_kth_from_end.jpg)
+* [Linked List MergeLists Method Whiteboard](./assets/mergeLists.jpg)
