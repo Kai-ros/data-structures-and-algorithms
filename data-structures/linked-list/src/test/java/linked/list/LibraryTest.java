@@ -536,4 +536,48 @@ public class LibraryTest
                 linkedList2.toString());
     }
 
+    @Test
+    public void testLinkedList_MergeListsEmptySecondListArgument()
+    {
+        LinkedList linkedList1 = new LinkedList();
+        linkedList1.append(1);
+        linkedList1.append(2);
+        linkedList1.append(3);
+        linkedList1.append(4);
+        linkedList1.append(5);
+
+        LinkedList linkedList2 = new LinkedList();
+
+        Node linkedList1HeadAddress = linkedList1.head;
+
+        linkedList1.mergeLists(linkedList1, linkedList2);
+
+        assertEquals(
+                "Merge lists should return the head node from the first linked list passed in as an argument if the second argument is empty.",
+                linkedList1HeadAddress,
+                linkedList1.mergeLists(linkedList1, linkedList2));
+    }
+
+    @Test
+    public void testLinkedList_MergeListsEmptyFirstListArgument()
+    {
+        LinkedList linkedList1 = new LinkedList();
+        linkedList1.append(1);
+        linkedList1.append(2);
+        linkedList1.append(3);
+        linkedList1.append(4);
+        linkedList1.append(5);
+
+        LinkedList linkedList2 = new LinkedList();
+
+        Node linkedList1HeadAddress = linkedList1.head;
+
+        linkedList1.mergeLists(linkedList1, linkedList2);
+
+        assertEquals(
+                "Merge lists should return the head node from the second linked list passed in as an argument if the first argument is empty.",
+                linkedList1HeadAddress,
+                linkedList2.mergeLists(linkedList2, linkedList1));
+    }
+
 }
