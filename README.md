@@ -12,6 +12,7 @@ This root README is where the links to daily work should live.
 
 ## Labs
 * [Singly Linked List](./data-structures/linked-list/linkedlist_README.md)
+* [Stacks and Queues](./data-structures/linked-list/stacksandqueues_README.md)
 
 
 
