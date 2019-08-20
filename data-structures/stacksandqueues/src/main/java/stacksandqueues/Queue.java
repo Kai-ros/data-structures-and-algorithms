@@ -17,16 +17,16 @@ public class Queue <Type>
 
     public void enqueue(Type dataValue)
     {
-        Node previousBack = back;
+        Node<Type> newNode = new Node(dataValue);
 
         if(queueSize == 0)
         {
-            back = new Node(dataValue);
-            front = back;
+            back = newNode;
+            front = newNode;
         }
         else
         {
-            back.next = new Node(dataValue);
+            back.next = newNode;
             back = back.next;
         }
 
