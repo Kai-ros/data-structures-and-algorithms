@@ -9,7 +9,7 @@
 
 ## Approach & Efficiency
 *  I utilized a two interior queue structure which allows me to maintain O(1) time complexity for either operation of enqueue() or dequeue() by performing the operations strictly on the interior dog and cat queues. 
-*  Space complexity for either operation is going to be O(n)
+*  Space complexity for either operation is going to be O(n).
 
 ## Solution
 ![Animal Shelter Queue](../src/main/resources/fifo_animal_shelter.jpg)
