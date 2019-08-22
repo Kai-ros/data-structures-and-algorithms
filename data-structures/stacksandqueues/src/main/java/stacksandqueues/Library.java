@@ -7,41 +7,7 @@ public class Library
 {
     public static void main(String[] args)
     {
-        AnimalShelter testShelter = new AnimalShelter();
-        Dog testDog = new Dog("Rolf");
-        Cat testCat = new Cat("Mittens");
 
-        testShelter.enqueue(testDog);
-
-        String message = testShelter.dequeue(testDog).name;
-        System.out.println(message);
-
-        testShelter.enqueue(testCat);
-
-        String junk = testShelter.dequeue(testCat).name;
-        System.out.println(junk);
-
-        testShelter.enqueue(testDog);
-        testShelter.enqueue(testDog);
-        testShelter.enqueue(testDog);
-
-        testShelter.enqueue(testCat);
-        testShelter.enqueue(testCat);
-        testShelter.enqueue(testCat);
-
-        Dog vash = new Dog("Vash");
-//        Cat knives = new Cat("Knives");
-
-        testShelter.enqueue(vash);
-
-//        testShelter.enqueue(knives);
-
-        System.out.println(testShelter.toString());
-
-        Animal knives = new Animal("Knives");
-        testShelter.enqueue(knives);
-
-        System.out.println(testShelter.toString());
 
     }
 }
