@@ -16,12 +16,20 @@ I used a recursive approach to my methods to accomplish the feature tasks.
 
 ## API
 * ``` BinarySearchTree.class```
+    * ``` BinarySearchTree() // Constructors.```
     * ``` add() // Add a node to the tree at the correct location.```
     * ``` contains() // Check to see if a given value exists in the tree.```
 * ``` BinaryTree.class```
+    * ``` BinaryTree() // Constructors.```
     * ``` preOrder() // Return an array of the values in pre-order.```
     * ``` inOrder() // Return an array of the values in in-order.```
     * ``` postOrder() // Return an array of the values in post-order.```
+    * ``` isEmpty() // Checks to see if the tree is empty.```
+    * ``` getRoot() // Returns the value at the root node.```
+    
+## Collaborators
+* Marisha Hoza, Padmapriya Ganapathi
+
 
 
 

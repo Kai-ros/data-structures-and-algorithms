@@ -2,6 +2,7 @@ package tree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class BinaryTree <Type>
 {
@@ -15,6 +16,11 @@ public class BinaryTree <Type>
     BinaryTree(Type dataValue)
     {
         this.root = new Node(dataValue);
+    }
+
+    BinaryTree(Node node)
+    {
+        this.root = node;
     }
 
     public Type[] preOrder()
@@ -76,7 +82,12 @@ public class BinaryTree <Type>
 
     public boolean isEmpty()
     {
-        return root == null;
+        return this.root == null;
+    }
+
+    public Node<Type> getRoot() throws NoSuchElementException
+    {
+        return this.root;
     }
 
 

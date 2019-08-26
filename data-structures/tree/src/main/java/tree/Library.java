@@ -7,29 +7,7 @@ import java.util.Arrays;
 
 public class Library
 {
-
-
     public static void main(String[] args)
     {
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
-
-        binarySearchTree.add(7);
-        binarySearchTree.add(8);
-        binarySearchTree.add(2);
-        binarySearchTree.add(4);
-        binarySearchTree.add(12);
-
-        String preOrderResult = Arrays.toString(binarySearchTree.preOrder());
-        String inOrderResult = Arrays.toString(binarySearchTree.inOrder());
-        String postOrderResult = Arrays.toString(binarySearchTree.postOrder());
-
-
-        System.out.println(preOrderResult);
-        System.out.println(inOrderResult);
-        System.out.println(postOrderResult);
-
-        System.out.println(binarySearchTree.contains(12));
-
-
     }
 }
