@@ -13,6 +13,8 @@ Implement a tree.
 
 ## Approach & Efficiency
 I used a recursive approach to my methods to accomplish the feature tasks.
+* Time complexity: O(n)
+* Space comnplexity: O(n)
 
 ## API
 * ``` BinarySearchTree.class```
@@ -27,8 +29,14 @@ I used a recursive approach to my methods to accomplish the feature tasks.
     * ``` isEmpty() // Checks to see if the tree is empty.```
     * ``` getRoot() // Returns the value at the root node.```
     
-## Collaborators
+## Collaborators - Day One
 * Marisha Hoza, Padmapriya Ganapathi
+
+## Collaborators - Day Two
+* Marisha Hoza
+
+## Whiteboards
+* [FizzBuzzTree Method Whiteboard](../src/main/resources/fizzbuzz_tree.jpg)
 
 
 

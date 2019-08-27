@@ -12,9 +12,9 @@ Conduct “FizzBuzz” on a tree while traversing through it. Change the values 
 * For explicitly-typed languages: Ensure your node values are of type ```Object```, to hold either strings or integers.
 
 ## Approach & Efficiency
-* I used a DFS recursive solution to traverse the tree, since it has to hit every node of the given tree it will always result in a linear time complexity. 
+I used a DFS recursive solution to traverse the tree, since it has to hit every node of the given tree it will always result in a linear time complexity. 
 * Time complexity: O(n)
 * Space comnplexity: O(1)
 
 ## Solution
-![Pseudo Queue with Stacks](../src/main/resources/fizzbuzz_tree.jpg)
+![FizzBuzzTree Method Whiteboard](../src/main/resources/fizzbuzz_tree.jpg)
