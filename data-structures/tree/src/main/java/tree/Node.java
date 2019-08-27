@@ -56,8 +56,6 @@ public class Node <Type>
     {
         return this.dataValue;
     }
-
-
 }
 
 // Resources:
