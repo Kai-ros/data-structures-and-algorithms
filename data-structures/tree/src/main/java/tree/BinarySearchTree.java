@@ -2,6 +2,7 @@ package tree;
 
 public class BinarySearchTree <Type> extends BinaryTree <Integer>
 {
+    BinarySearchTree(){}
 
     public void add(Integer dataValue)
     {
