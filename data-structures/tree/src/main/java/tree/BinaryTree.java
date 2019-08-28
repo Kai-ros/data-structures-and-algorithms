@@ -1,8 +1,6 @@
 package tree;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class BinaryTree <Type>
 {
@@ -90,9 +88,59 @@ public class BinaryTree <Type>
         return this.root;
     }
 
+    public void breadthFirstTraversal(BinaryTree<Type> tree)
+    {
+        Queue<Node<Type>> traversalQueue = new LinkedList<>();
 
+        if (tree.root == null)
+        {
+            return;
+        }
+        traversalQueue.add(tree.root);
+        while (!traversalQueue.isEmpty())
+        {
+            Node<Type> currentNode = traversalQueue.remove();
+
+            System.out.println(currentNode.dataValue);
+
+            if (currentNode.leftChild != null)
+            {
+                traversalQueue.add(currentNode.leftChild);
+            }
+            if (currentNode.rightChild != null)
+            {
+                traversalQueue.add(currentNode.rightChild);
+            }
+        }
+    }
+
+//    public void breadthFirstTraversalRecursive(BinaryTree<Type> tree)
+//    {
+//        Queue<Node<Type>> traversalQueue = new LinkedList<>();
+//
+//        if (tree.root == null)
+//        {
+//            return;
+//        }
+//        breadthFirstTraversalRecursive(traversalQueue);
+//    }
+//
+//    private void breadthFirstTraversalRecursive(Queue<Node<Type>> queue)
+//    {
+//        if (queue.element() != null)
+//        {
+//            queue.add(tree.root);
+//            Node<Type> currentNode = queue.remove();
+//            System.out.println(currentNode.dataValue);
+//            queue.add(currentNode.leftChild);
+//            queue.add(currentNode.rightChild);
+//            breadthFirstTraversalRecursive(queue);
+//        }
+//    }
 }
 
 // Resources:
 // https://www.sanfoundry.com/java-program-implement-binary-tree/
 // https://www.baeldung.com/java-binary-tree
+// https://www.callicoder.com/java-queue/
+// https://algorithms.tutorialhorizon.com/breadth-first-searchtraversal-in-a-binary-tree/
