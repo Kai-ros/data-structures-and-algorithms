@@ -12,6 +12,7 @@ This root README is where the links to daily work should live.
 * [Animal Shelter with Queues](./data-structures/stacksandqueues/readmes/animalshelter_README.md)
 * [MultiBracketValidation with Stack](./data-structures/stacksandqueues/readmes/multibracketvalidation_README.md)
 * [FizzBuzzTree](./data-structures/tree/readmes/fizzbuzztree_README.md)
+* [BreadthFirstTraversal](./data-structures/tree/readmes/breadthfirsttraversal_README.md)
 
 ## Labs
 * [Singly Linked List](./data-structures/linked-list/linkedlist_README.md)
