@@ -1,8 +1,11 @@
 package tree;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
@@ -10,6 +13,13 @@ import static org.junit.Assert.*;
 public class BinaryTreeTest
 {
     BinarySearchTree binarySearchTree = new BinarySearchTree();
+    BinarySearchTree binarySearchTreeEmpty = new BinarySearchTree();
+    BinarySearchTree binarySearchTreeSameValues = new BinarySearchTree();
+    BinaryTree binaryTree = new BinaryTree();
+
+    // Necessary for testing System.out's
+    ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    PrintStream originalOut = System.out;
 
     @Before
     public void initializeTestData()
@@ -19,6 +29,20 @@ public class BinaryTreeTest
         binarySearchTree.add(2);
         binarySearchTree.add(4);
         binarySearchTree.add(12);
+
+        binarySearchTreeSameValues.add(3);
+        binarySearchTreeSameValues.add(3);
+        binarySearchTreeSameValues.add(3);
+        binarySearchTreeSameValues.add(3);
+
+
+        System.setOut(new PrintStream(outContent));
+    }
+
+    @After
+    public void restoreStreams()
+    {
+        System.setOut(originalOut);
     }
 
     @Test
@@ -68,4 +92,56 @@ public class BinaryTreeTest
         String postOrderResult = Arrays.toString(binarySearchTree.postOrder());
         assertEquals("Post-order is correct.", "[2, 4, 8, 12, 7]", postOrderResult);
     }
+
+    @Test
+    public void testBreadthFirstTraversal()
+    {
+        binarySearchTree.add(8);
+        binarySearchTree.add(7);
+        binarySearchTree.add(16);
+        binarySearchTree.add(16);
+        binarySearchTree.add(3);
+        binarySearchTree.add(12);
+        binarySearchTree.add(9);
+
+        binaryTree.breadthFirstTraversal(binarySearchTree);
+        assertEquals( "BFT should occur in correct order.",
+                "7\n" +
+                        "2\n" +
+                        "8\n" +
+                        "4\n" +
+                        "7\n" +
+                        "12\n" +
+                        "3\n" +
+                        "8\n" +
+                        "16\n" +
+                        "9\n" +
+                        "12\n" +
+                        "16\n",
+                outContent.toString());
+    }
+
+    @Test
+    public void testBreadthFirstTraversal_EmptyTree()
+    {
+        binaryTree.breadthFirstTraversal(binarySearchTreeEmpty);
+        assertEquals("An empty tree should result in no System.out's.",
+                "",
+                outContent.toString());
+    }
+
+    @Test
+    public void testBreadthFirstTraversal_SameValues()
+    {
+        binaryTree.breadthFirstTraversal(binarySearchTreeSameValues);
+        assertEquals("An empty tree should result in no System.out's.",
+                "3\n" +
+                        "3\n" +
+                        "3\n" +
+                        "3\n",
+                outContent.toString());
+    }
 }
+
+// Resources:
+// https://stackoverflow.com/questions/1119385/junit-test-for-system-out-println
