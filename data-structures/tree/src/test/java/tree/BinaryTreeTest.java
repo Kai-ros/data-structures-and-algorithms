@@ -21,6 +21,11 @@ public class BinaryTreeTest
     ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     PrintStream originalOut = System.out;
 
+    BinaryTree<Integer> maxValueBinaryTree;
+    BinaryTree<Integer> maxValueBinaryTreeEmpty = new BinaryTree<>();
+    BinaryTree<Integer> maxValueBinaryTreeDuplicates;
+
+
     @Before
     public void initializeTestData()
     {
@@ -35,8 +40,38 @@ public class BinaryTreeTest
         binarySearchTreeSameValues.add(3);
         binarySearchTreeSameValues.add(3);
 
-
         System.setOut(new PrintStream(outContent));
+
+        Node<Integer> node7 = new Node<>(5);
+
+        Node<Integer> node3 = new Node<>(32, node7, null);
+        Node<Integer> node4 = new Node<>(200);
+
+        Node<Integer> node5 = new Node<>(9);
+        Node<Integer> node6 = new Node<>(50);
+
+        Node<Integer> node1 = new Node<>(78, node3, node4);
+        Node<Integer> node2 = new Node<>(14, node5, node6);
+
+        Node<Integer> rootNode = new Node<>(7, node1, node2);
+
+        maxValueBinaryTree = new BinaryTree<>(rootNode);
+
+        Node<Integer> node8 = new Node<>(3);
+
+        Node<Integer> node9 = new Node<>(3, node8, null);
+        Node<Integer> node10 = new Node<>(20);
+
+        Node<Integer> node11 = new Node<>(3);
+        Node<Integer> node12 = new Node<>(20);
+
+        Node<Integer> node13 = new Node<>(3, node9, node10);
+        Node<Integer> node14 = new Node<>(3, node11, node12);
+
+        Node<Integer> root = new Node<>(20, node13, node14);
+
+        maxValueBinaryTreeDuplicates = new BinaryTree<>(root);
+
     }
 
     @After
@@ -134,12 +169,39 @@ public class BinaryTreeTest
     public void testBreadthFirstTraversal_SameValues()
     {
         binaryTree.breadthFirstTraversal(binarySearchTreeSameValues);
-        assertEquals("An empty tree should result in no System.out's.",
+        assertEquals("A tree of only duplicate values should still work.",
                 "3\n" +
                         "3\n" +
                         "3\n" +
                         "3\n",
                 outContent.toString());
+    }
+
+    @Test
+    public void testFindMaximumValue()
+    {
+        int maxValue = maxValueBinaryTree.findMaximumValue(maxValueBinaryTree);
+        assertEquals("Given a tree of ints the method should return the highest value int.",
+                200,
+                maxValue);
+    }
+
+    @Test
+    public void testFindMaximumValue_Empty()
+    {
+        int maxValue = maxValueBinaryTreeEmpty.findMaximumValue(maxValueBinaryTreeEmpty);
+        assertEquals("Given an empty tree the method should return a zero.",
+                0,
+                maxValue);
+    }
+
+    @Test
+    public void testFindMaximumValue_DuplicateValues()
+    {
+        int maxValue = maxValueBinaryTreeDuplicates.findMaximumValue(maxValueBinaryTreeDuplicates);
+        assertEquals("Given a tree of duplicates the method should return the highest value int.",
+                20,
+                maxValue);
     }
 }
 

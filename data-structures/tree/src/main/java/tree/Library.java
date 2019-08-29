@@ -9,17 +9,8 @@ public class Library
 {
     public static void main(String[] args)
     {
-//        BinarySearchTree binarySearchTree = new BinarySearchTree();
-//        BinaryTree binaryTree = new BinaryTree();
-//
-//        binarySearchTree.add(8);
-//        binarySearchTree.add(7);
-//        binarySearchTree.add(16);
-//        binarySearchTree.add(16);
-//        binarySearchTree.add(3);
-//        binarySearchTree.add(12);
-//        binarySearchTree.add(9);
-//
-//        binaryTree.breadthFirstTraversalRecursive(binarySearchTree);
+
+
+
     }
 }

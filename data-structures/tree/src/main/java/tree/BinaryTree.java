@@ -114,29 +114,33 @@ public class BinaryTree <Type>
         }
     }
 
-//    public void breadthFirstTraversalRecursive(BinaryTree<Type> tree)
-//    {
-//        Queue<Node<Type>> traversalQueue = new LinkedList<>();
-//
-//        if (tree.root == null)
-//        {
-//            return;
-//        }
-//        breadthFirstTraversalRecursive(traversalQueue);
-//    }
-//
-//    private void breadthFirstTraversalRecursive(Queue<Node<Type>> queue)
-//    {
-//        if (queue.element() != null)
-//        {
-//            queue.add(tree.root);
-//            Node<Type> currentNode = queue.remove();
-//            System.out.println(currentNode.dataValue);
-//            queue.add(currentNode.leftChild);
-//            queue.add(currentNode.rightChild);
-//            breadthFirstTraversalRecursive(queue);
-//        }
-//    }
+    public int findMaximumValue(BinaryTree<Integer> tree)
+    {
+        int maximumValue = recursiveMaxValue(tree.root);
+        return maximumValue;
+    }
+
+    private int recursiveMaxValue(Node<Integer> currentNode)
+    {
+        int maximumValue = 0;
+
+        if (currentNode != null)
+        {
+            maximumValue = currentNode.dataValue;
+            int leftMax = recursiveMaxValue(currentNode.leftChild);
+            int rightMax = recursiveMaxValue(currentNode.rightChild);
+
+            if (leftMax > maximumValue)
+            {
+                maximumValue = leftMax;
+            }
+            if (rightMax > maximumValue)
+            {
+                maximumValue = rightMax;
+            }
+        }
+        return maximumValue;
+    }
 }
 
 // Resources:
