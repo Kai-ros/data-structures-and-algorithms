@@ -11,7 +11,7 @@ INSERTION SORT
 * Space Complexity: O(1)
 
 ## Solution
-* ![Insertion Sort Whiteboard](../whiteboards/insertionsort.jpg)
+* ![Insertion Sort Whiteboard](../whiteboards/insertionSort_whiteboard.jpg)
 
 ## Collaborators
 * N/A
