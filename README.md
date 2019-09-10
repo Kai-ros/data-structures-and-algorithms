@@ -7,9 +7,9 @@ This root README is where the links to daily work should live.
 ## DATA STRUCTURES
 
 ### Code Challenges 
-* [Reverse an Array](./readmes/arrayreverse_README.md)
-* [Shift an Array](./readmes/arrayshift_README.md)
-* [Binary Search an Array](./readmes/binarysearch_README.md)
+* [Reverse an Array](./code401challenges/readmes/arrayreverse_README.md)
+* [Shift an Array](./code401challenges/readmes/arrayshift_README.md)
+* [Binary Search an Array](./code401challenges/readmes/binarysearch_README.md)
 * [Pseudo Queue with Stacks](./data-structures/stacksandqueues/readmes/pseudoqueue_README.md)
 * [Animal Shelter with Queues](./data-structures/stacksandqueues/readmes/animalshelter_README.md)
 * [MultiBracketValidation with Stack](./data-structures/stacksandqueues/readmes/multibracketvalidation_README.md)
