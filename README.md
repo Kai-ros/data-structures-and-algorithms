@@ -4,7 +4,9 @@ This repo shows the expected file structure for Code 401: Java data structures &
 
 This root README is where the links to daily work should live.
 
-## Code Challenges 
+## DATA STRUCTURES
+
+### Code Challenges 
 * [Reverse an Array](./readmes/arrayreverse_README.md)
 * [Shift an Array](./readmes/arrayshift_README.md)
 * [Binary Search an Array](./readmes/binarysearch_README.md)
@@ -14,10 +16,20 @@ This root README is where the links to daily work should live.
 * [FizzBuzzTree](./data-structures/tree/readmes/fizzbuzztree_README.md)
 * [BreadthFirstTraversal](./data-structures/tree/readmes/breadthfirsttraversal_README.md)
 
-## Labs
+### Labs
 * [Singly Linked List](./data-structures/linked-list/linkedlist_README.md)
 * [Stacks and Queues](./data-structures/stacksandqueues/readmes/stacksandqueues_README.md)
 * [Trees](./data-structures/tree/readmes/trees_README.md)
+
+## ALGORITHMS
+
+### Code Challenges 
+* [Insertion Sort](./algorithms/readmes/insertionsort_README.md)
+* [Merge Sort](./algorithms/readmes/mergesort_README.md)
+
+### Labs
+
+
 
 
 
