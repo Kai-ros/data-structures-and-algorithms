@@ -7,11 +7,11 @@ INSERTION SORT
 
 ## Approach & Efficiency
 * I utilized the imperative method prescribed in the pseudo code and acheived the following efficiencies.
-* Time Complexity: O(n^2)
-* Space Complexity: O(1)
+    * Time Complexity: O(n^2)
+    * Space Complexity: O(1)
 
 ## Solution
-* ![Insertion Sort Whiteboard](../whiteboards/insertionSort_whiteboard.jpg)
+* ![Insertion Sort Whiteboard](../images/insertionSort_whiteboard.jpg)
 
 ## Collaborators
 * N/A

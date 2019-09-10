@@ -5,9 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class InsertionSortTest
-{
-    InsertionSort insertionSort;
+public class MergeSortTest {
+
+    MergeSort mergeSort;
     int[] testArraySorted;
     int[] testArrayEmpty;
     int[] testArrayUnsorted;
@@ -23,21 +23,21 @@ public class InsertionSortTest
     }
 
     @Test
-    public void insertionSort()
+    public void mergeSort()
     {
-        insertionSort = new InsertionSort();
+        mergeSort = new MergeSort();
 
         assertEquals(
                 "Method should return an array.",
                 null,
-                insertionSort.insertionSort());
+                mergeSort.mergeSort());
     }
 
     @Test
-    public void insertionSort_SortedArray()
+    public void mergeSort_SortedArray()
     {
-        insertionSort = new InsertionSort(testArraySorted);
-        insertionSort.insertionSort();
+        mergeSort = new MergeSort(testArraySorted);
+        mergeSort.mergeSort();
 
         assertEquals(
                 "Method should return a sorted array.",
@@ -51,14 +51,14 @@ public class InsertionSortTest
                         "Array at index 7 - 8\n" +
                         "Array at index 8 - 9\n" +
                         "Array at index 9 - 10\n",
-                insertionSort.toString());
+                mergeSort.toString());
     }
 
     @Test
-    public void insertionSort_UnsortedArray()
+    public void mergeSort_UnsortedArray()
     {
-        insertionSort = new InsertionSort(testArrayUnsorted);
-        insertionSort.insertionSort();
+        mergeSort = new MergeSort(testArrayUnsorted);
+        mergeSort.mergeSort();
 
         assertEquals(
                 "Method should return a sorted array.",
@@ -80,14 +80,14 @@ public class InsertionSortTest
                         "Array at index 15 - 7\n" +
                         "Array at index 16 - 8\n" +
                         "Array at index 17 - 9\n",
-                insertionSort.toString());
+                mergeSort.toString());
     }
 
     @Test
-    public void insertionSort_ImbalancedArray()
+    public void mergeSort_ImbalancedArray()
     {
-        insertionSort = new InsertionSort(testArrayImbalanced);
-        insertionSort.insertionSort();
+        mergeSort = new MergeSort(testArrayImbalanced);
+        mergeSort.mergeSort();
 
         assertEquals(
                 "Method should return a sorted array.",
@@ -109,18 +109,26 @@ public class InsertionSortTest
                         "Array at index 15 - 1\n" +
                         "Array at index 16 - 1\n" +
                         "Array at index 17 - 4\n",
-                insertionSort.toString());
+                mergeSort.toString());
     }
 
     @Test
-    public void insertionSort_EmptyArray()
+    public void mergeSort_EmptyArray()
     {
-        insertionSort = new InsertionSort(testArrayEmpty);
-        insertionSort.insertionSort();
+        mergeSort = new MergeSort(testArrayEmpty);
+        mergeSort.mergeSort();
 
         assertEquals(
                 "Method should return an empty array.",
                 "",
-                insertionSort.toString());
+                mergeSort.toString());
     }
 }
+
+
+
+
+
+
+
+
