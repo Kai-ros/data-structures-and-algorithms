@@ -14,7 +14,7 @@ MERGE SORT
 * ![Merge Sort Whiteboard](../images/mergeSort_whiteboard.jpg)
 
 ## Collaborators
-* N/A
+* Chris Coulon
 
 
 
