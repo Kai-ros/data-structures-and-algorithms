@@ -20,7 +20,7 @@ free the space for the lesser value element to be inserted.
     * As an example; sorting a user's top 50 most played songs on a music streaming app, 
     size will always be controlled for and the list will need to frequently be resorted without incurring space costs.
 ## Diagram
-* ![Insertion Sort Process](../whiteboards/insertionSort.jpg)
+* ![Insertion Sort Process](../images/insertionSort.jpg)
 
 ## Algorithm
 * Step 1 − If it is the first element, it is already sorted. return 1;
