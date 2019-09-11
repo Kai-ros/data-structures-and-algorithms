@@ -6,7 +6,7 @@ INSERTION SORT
 * Create a blog post on understanding the Insertion Sort Algorithm suitable for a 301 level student. Alternately, prepare a presentation that presents the algorithm in a novel way. E.g. a short skit, live mini-lecture, interpretive dance.
 
 ## Approach & Efficiency
-* I utilized the imperative method prescribed in the pseudo code and acheived the following efficiencies.
+* I utilized the imperative method prescribed in the pseudo code and achieved the following efficiencies.
     * Time Complexity: O(n^2)
     * Space Complexity: O(1)
 

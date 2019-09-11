@@ -5,9 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class MergeSortTest
+public class QuickSortTest
 {
-    MergeSort mergeSort;
+    QuickSort quickSort;
     int[] testArraySorted;
     int[] testArrayEmpty;
     int[] testArrayUnsorted;
@@ -23,21 +23,21 @@ public class MergeSortTest
     }
 
     @Test
-    public void mergeSort()
+    public void quickSort()
     {
-        mergeSort = new MergeSort();
+        quickSort = new QuickSort();
 
         assertEquals(
                 "Method should return an array.",
                 null,
-                mergeSort.mergeSort());
+                quickSort.quickSort());
     }
 
     @Test
-    public void mergeSort_SortedArray()
+    public void quickSort_SortedArray()
     {
-        mergeSort = new MergeSort(testArraySorted);
-        mergeSort.mergeSort();
+        quickSort = new QuickSort(testArraySorted);
+        quickSort.quickSort();
 
         assertEquals(
                 "Method should return a sorted array.",
@@ -51,14 +51,14 @@ public class MergeSortTest
                         "Array at index 7 - 8\n" +
                         "Array at index 8 - 9\n" +
                         "Array at index 9 - 10\n",
-                mergeSort.toString());
+                quickSort.toString());
     }
 
     @Test
-    public void mergeSort_UnsortedArray()
+    public void quickSort_UnsortedArray()
     {
-        mergeSort = new MergeSort(testArrayUnsorted);
-        mergeSort.mergeSort();
+        quickSort = new QuickSort(testArrayUnsorted);
+        quickSort.quickSort();
 
         assertEquals(
                 "Method should return a sorted array.",
@@ -80,14 +80,14 @@ public class MergeSortTest
                         "Array at index 15 - 7\n" +
                         "Array at index 16 - 8\n" +
                         "Array at index 17 - 9\n",
-                mergeSort.toString());
+                quickSort.toString());
     }
 
     @Test
-    public void mergeSort_ImbalancedArray()
+    public void quickSort_ImbalancedArray()
     {
-        mergeSort = new MergeSort(testArrayImbalanced);
-        mergeSort.mergeSort();
+        quickSort = new QuickSort(testArrayImbalanced);
+        quickSort.quickSort();
 
         assertEquals(
                 "Method should return a sorted array.",
@@ -109,26 +109,18 @@ public class MergeSortTest
                         "Array at index 15 - 1\n" +
                         "Array at index 16 - 1\n" +
                         "Array at index 17 - 4\n",
-                mergeSort.toString());
+                quickSort.toString());
     }
 
     @Test
-    public void mergeSort_EmptyArray()
+    public void quickSort_EmptyArray()
     {
-        mergeSort = new MergeSort(testArrayEmpty);
-        mergeSort.mergeSort();
+        quickSort = new QuickSort(testArrayEmpty);
+        quickSort.quickSort();
 
         assertEquals(
                 "Method should return an empty array.",
                 "",
-                mergeSort.toString());
+                quickSort.toString());
     }
 }
-
-
-
-
-
-
-
-
