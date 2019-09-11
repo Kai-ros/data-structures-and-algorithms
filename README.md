@@ -26,6 +26,7 @@ This root README is where the links to daily work should live.
 ### Code Challenges 
 * [Insertion Sort](./algorithms/readmes/insertionsort_README.md)
 * [Merge Sort](./algorithms/readmes/mergesort_README.md)
+* [Quick Sort](./algorithms/readmes/quicksort_README.md)
 
 ### Labs
 
