@@ -11,7 +11,7 @@ QUICK SORT
     * Space Complexity: O(log(n))
 
 ## Solution
-* ![Quick Sort Whiteboard](../images/quickSort_whiteboard.jpg)
+* ![Quick Sort Whiteboard](../images/quicksort_whiteboard.jpg)
 
 ## Collaborators
 * N/A
