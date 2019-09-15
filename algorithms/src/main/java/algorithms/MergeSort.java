@@ -18,6 +18,7 @@ public class MergeSort
 
     public int[] mergeSort(int[] array)
     {
+        // Ensure the array is not a null value so that operations can be performed on it.
         if (array == null)
         {
             return array;
@@ -25,17 +26,24 @@ public class MergeSort
 
         int arraySize = array.length;
 
+        // Base Case: So long as there is more than one element in each array, continue to recurse.
         if ( arraySize > 1)
         {
             int midPoint = arraySize / 2;
+            // Left array is set to size first index --> midpoint.
             int[] left = new int[midPoint];
+            // Right array is set to size midpoint --> last index.
             int[] right = new int[arraySize - midPoint];
 
+            // The elements of the array being passed in are fed into the array halves.
             System.arraycopy(array, 0, left, 0, left.length);
             System.arraycopy(array, left.length, right, 0, right.length);
 
+            // The left array is recursed over and split.
             mergeSort(left);
+            // The right array is recursed over and split.
             mergeSort(right);
+            // Merge is called independent of the recursive calls
             merge(left, right, array);
         }
         return array;
@@ -52,13 +60,16 @@ public class MergeSort
         // k
         int arrayIndex = 0;
 
+        // Perform merge operation for as long as there are elements left in each array
         while ((leftIndex < arrayLeft.length) && (rightIndex < arrayRight.length))
         {
+            // If left value is less than or equal to right, left value is added to array.
             if (arrayLeft[leftIndex] <= arrayRight[rightIndex])
             {
                 resultArray[arrayIndex] = arrayLeft[leftIndex];
                 leftIndex++;
             }
+            // Else right value is less than or equal to left, right value is added to array.
             else
             {
                 resultArray[arrayIndex] = arrayRight[rightIndex];
@@ -66,6 +77,7 @@ public class MergeSort
             }
             arrayIndex++;
         }
+        // At the completion of the while loop left/right array are merged into the result array.
         System.arraycopy(arrayLeft, leftIndex, resultArray, arrayIndex, arrayLeft.length - leftIndex);
         System.arraycopy(arrayRight, rightIndex, resultArray, arrayIndex, arrayRight.length - rightIndex);
     }
