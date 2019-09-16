@@ -10,11 +10,14 @@ Implement a Hashtable with the following methods:
 4. ```hash```: takes in an arbitrary key and returns an index in the collection.
 
 ## Approach & Efficiency
-Time Complexity:
-Space Complexity:
+I implemented what I believe to be a standard hash table template.
+Time Complexity: O(1) - Average / O(n) - Worst
+Space Complexity: O(n)
 
 ## API
 * -- Hashtable.java
+* ---- Hashtable()
+* ---- setTableSize()
 * ---- add()
 * ---- get()
 * ---- contains()
