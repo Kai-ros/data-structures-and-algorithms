@@ -38,5 +38,8 @@ public class RepeatedWord
         return "No repeated words.";
     }
 
-
 }
+
+// Resources:
+// https://javarevisited.blogspot.com/2015/07/how-to-find-duplicate-words-in-string-java.html
+// https://javaconceptoftheday.com/find-most-repeated-word-in-text-file-in-java/
