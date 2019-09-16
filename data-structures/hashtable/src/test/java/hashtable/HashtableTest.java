@@ -38,7 +38,10 @@ public class HashtableTest
     public void testHashTable()
     {
         Hashtable hashTableTest = new Hashtable();
-        assertEquals("A new hash table with no values is instantiated when the constructor is called.", "", hashTableTest.toString());
+        assertEquals(
+                "A new hash table with no values is instantiated when the constructor is called.",
+                "",
+                hashTableTest.toString());
     }
 
     @Test

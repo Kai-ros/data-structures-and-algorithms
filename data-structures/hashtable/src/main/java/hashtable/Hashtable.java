@@ -5,8 +5,8 @@ package hashtable;
 
 public class Hashtable <Value>
 {
-    private HashNode[] table;
-    private int entryCount;
+    public HashNode[] table;
+    public int entryCount;
 
     public Hashtable() {}
 
