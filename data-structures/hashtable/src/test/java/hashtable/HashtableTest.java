@@ -33,19 +33,16 @@ public class HashtableTest
         hashTable.add("Jason", "Student");
     }
 
-    // Unimplemented:
-    // Successfully retrieve a value from a bucket within the hashtable that has a collision
-    // Successfully handle a collision within the hashtable
 
     @Test
-    public void hashTable()
+    public void testHashTable()
     {
         Hashtable hashTableTest = new Hashtable();
         assertEquals("A new hash table with no values is instantiated when the constructor is called.", "", hashTableTest.toString());
     }
 
     @Test
-    public void hash()
+    public void testHashTable_Hash()
     {
         assertEquals(
                 "The hash() succesffuly hashes a key to an in-range value.",
@@ -55,7 +52,7 @@ public class HashtableTest
 
     // Adding a key/value to your hashtable results in the value being in the data structure
     @Test
-    public void add()
+    public void testHashTable_Add()
     {
         hashTable.add("Test", "Value");
         assertEquals(
@@ -66,13 +63,13 @@ public class HashtableTest
     }
 
     @Test
-    public void get()
+    public void testHashTable_Get()
     {
         assertEquals("The get() returns the correct value when supplied with a key.", "Dog", hashTable.get("Demi"));
     }
 
     @Test
-    public void contains()
+    public void testHashTable_Contains()
     {
         assertEquals(
                 "The contains() will return a false for any value not contained in the hash table.",
@@ -81,7 +78,24 @@ public class HashtableTest
     }
 
     @Test
-    public void testToString()
+    public void testHashTable_Collision()
+    {
+        Hashtable hashTable_Collision = new Hashtable(1);
+        hashTable_Collision.add("Maximum", "Effort");
+        hashTable_Collision.add("Dangerous", "Adventures");
+        hashTable_Collision.add("Test", "This");
+
+        assertEquals(
+                "The contains() will return a false for any value not contained in the hash table.",
+                "Target 1 : This\n" +
+                        "Target 1 : Adventures\n" +
+                        "Target 1 : Effort\n",
+                hashTable_Collision.toString());
+
+    }
+
+    @Test
+    public void testHashTable_ToString()
     {
         assertEquals(
                 "The toString()prints all of the entries contained in the hash table.",
