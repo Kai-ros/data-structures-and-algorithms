@@ -1,20 +1,20 @@
 package hashtable;
 
-public class HashNode <Value>
+public class HashNode <Key, Value>
 {
-    String key;
+    Key key;
     Value value;
     HashNode next;
 
     public HashNode() {}
 
-    public HashNode(String key, Value value)
+    public HashNode(Key key, Value value)
     {
         this.key = key;
         this.value = value;
     }
 
-    public String getKey()
+    public Key getKey()
     {
         return this.key;
     }
@@ -24,7 +24,7 @@ public class HashNode <Value>
         return this.value;
     }
 
-    public void setKey(String key)
+    public void setKey(Key key)
     {
         this.key = key;
     }

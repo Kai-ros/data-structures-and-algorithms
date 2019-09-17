@@ -20,7 +20,7 @@ public class RepeatedWord
         }
 
         String[] individualWords = input.split("\\W+");
-        Hashtable<Integer> wordBank = new Hashtable<>(10000);
+        Hashtable<String, Integer> wordBank = new Hashtable<>(10000);
 
         for(String word : individualWords)
         {

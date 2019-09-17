@@ -3,7 +3,9 @@
 
 package hashtable;
 
-public class Hashtable <Value>
+import java.util.ArrayList;
+
+public class Hashtable <Key, Value>
 {
     public HashNode[] table;
     public int entryCount;
@@ -16,22 +18,19 @@ public class Hashtable <Value>
         this.entryCount = 0;
     }
 
-    public int hash(String key)
+    public int hash(Key key)
     {
-        int hashValue = 0;
-        char[] letters = key.toCharArray();
-        for ( int i = 0; i < letters.length; i++)
-        {
-            hashValue += letters[i];
-        }
-        hashValue = (hashValue * 599) % table.length;
+        int hashValue = key.hashCode();
+        hashValue %= table.length;
+        if (hashValue < 0) { hashValue += table.length; }
 
         return hashValue;
     }
-    public void add(String key, Value value)
+
+    public void add(Key key, Value value)
     {
         int target = hash(key);
-        HashNode<Value> entry = table[target];
+        HashNode<Key, Value> entry = table[target];
 
         while (entry != null)
         {
@@ -56,9 +55,9 @@ public class Hashtable <Value>
         }
     }
 
-    public Value get(String key) {
+    public Value get(Key key) {
         int target = hash(key);
-        HashNode<Value> entry = table[target];
+        HashNode<Key, Value> entry = table[target];
 
         while (entry != null)
         {
@@ -72,7 +71,25 @@ public class Hashtable <Value>
         return null;
     }
 
-    public boolean contains(String key)
+    public ArrayList<Key> getKeys()
+    {
+        ArrayList<Key> arrayBuilder = new ArrayList<>();
+
+        for (int i = 0; i < table.length; i++)
+        {
+            HashNode<Key, Value> entry = table[i];
+
+            while (entry != null)
+            {
+                arrayBuilder.add(entry.key);
+                entry = entry.next;
+            }
+        }
+
+        return arrayBuilder;
+    }
+
+    public boolean contains(Key key)
     {
         int target = hash(key);
         HashNode entry = table[target];
@@ -104,7 +121,7 @@ public class Hashtable <Value>
 
             while (entry != null)
             {
-                outputMessage.append("Target "+ (i + 1) +" : " + entry.value + "\n");
+                outputMessage.append("Target "+ i + " : " + entry.value + "\n");
                 entry = entry.next;
             }
         }
@@ -114,13 +131,5 @@ public class Hashtable <Value>
 
 
 
-    /* goodHash() which gives a hash value for a given string/Object */
-//    private int goodHash(String key )
-//    {
-//        int hashVal = key.hashCode();
-//        hashVal %= TABLE_SIZE;
-//        if (hashVal < 0)
-//            hashVal += TABLE_SIZE;
-//        return hashVal;
-//    }
+
 }
