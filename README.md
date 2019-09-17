@@ -16,6 +16,7 @@ This root README is where the links to daily work should live.
 * [FizzBuzzTree](./data-structures/tree/readmes/fizzbuzztree_README.md)
 * [BreadthFirstTraversal](./data-structures/tree/readmes/breadthfirsttraversal_README.md)
 * [Repeated Word](./data-structures/readmes/repeatedword_README.md)
+* [Tree Intersection](./data-structures/readmes/treeintersection_README.md)
 
 ### Labs
 * [Singly Linked List](./data-structures/linked-list/linkedlist_README.md)
