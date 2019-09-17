@@ -7,28 +7,6 @@ public class Library
 {
     public static void main(String[] args)
     {
-        Hashtable hashTable = new Hashtable(1024);
 
-        hashTable.add("John", "Husband");
-        hashTable.add("Cathy", "Boss");
-        hashTable.add("Amanda", "The Real Boss");
-        hashTable.add("Allie", "Kid");
-        hashTable.add("Zach", "Kid");
-        hashTable.add("Rosie", "Dog");
-        hashTable.add("Justin", "Student");
-        hashTable.add("Demi", "Dog");
-        hashTable.add("Ovi", "Student");
-        hashTable.add("Ben", "Student");
-        hashTable.add("Khalil", "Student");
-        hashTable.add("Michael", "Student");
-        hashTable.add("Timea", "Student");
-        hashTable.add("Jason", "Student");
-
-        System.out.println( "Has Michael ... " + hashTable.contains("Michael") );
-        System.out.println( "Get Michael " + hashTable.get("Michael") );
-        System.out.println( "Get John " + hashTable.get("John") );
-        System.out.println( "Has Freddie ... " + hashTable.contains("Freddie Mercury") );
-
-        System.out.println(hashTable.toString());
     }
 }
