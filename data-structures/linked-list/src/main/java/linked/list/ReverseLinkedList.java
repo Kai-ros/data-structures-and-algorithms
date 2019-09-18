@@ -1,18 +1,14 @@
 package linked.list;
 
-public class ReverseLinkedList
-{
-    public LinkedList reverseLinkedListInPlace(LinkedList inputList)
-    {
-        if ((inputList == null) || (inputList.head.next == null))
-        {
+public class ReverseLinkedList {
+    public LinkedList reverseLinkedListInPlace(LinkedList inputList) {
+        if ((inputList == null) || (inputList.head.next == null)) {
             return inputList;
         }
         Node currentNode = inputList.head;
         Node previousNode = null;
 
-        while(currentNode != null)
-        {
+        while (currentNode != null) {
             Node tempNode = currentNode.next;
             currentNode.next = previousNode;
             previousNode = currentNode;
@@ -22,33 +18,15 @@ public class ReverseLinkedList
         return inputList;
     }
 
-    public LinkedList reverseLinkedListInPlace_Recursive(LinkedList inputList)
-    {
-        if ((inputList == null) || (inputList.head.next == null))
-        {
-            return inputList;
+    // This recursive solution was devised by my friend, Chris Coulon.
+    public static LinkedList reverseRecursion(Node previous, Node currNode, LinkedList list) {
+        Node tempNext = currNode.next;
+        currNode.next = previous;
+        if (tempNext == null) {
+            list.head = currNode;
+            return list;
         }
-        Node currentNode = inputList.head;
-        Node previous = null;
-
-        inputList.head = recursiveReverseLinkedListInPlace(previous, currentNode, currentNode.next);
-
-        return inputList;
-    }
-
-    public Node recursiveReverseLinkedListInPlace(Node previous, Node current, Node next)
-    {
-        if(current != null)
-        {
-            Node tempNode = next;
-            next = previous;
-            previous = current;
-            current = tempNode;
-            return recursiveReverseLinkedListInPlace(previous, current, next);
-        }
-        else
-        {
-            return previous;
-        }
+        reverseRecursion(currNode, tempNext, list);
+        return list;
     }
 }
