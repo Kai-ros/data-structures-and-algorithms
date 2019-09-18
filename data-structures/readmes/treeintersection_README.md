@@ -7,8 +7,8 @@ Find common values in 2 binary trees.
 
 ## Approach & Efficiency
 I think I found as optimal of a solution as there could be given the requirements.
-Time Complexity: O(n)
-Space Complexity: O(n)
+* Time Complexity: O(n)
+* Space Complexity: O(n)
 
 ## Solution
 * [Tree Intersection Source Code](../hashtable/src/main/java/hashtable/TreeIntersection.java)
