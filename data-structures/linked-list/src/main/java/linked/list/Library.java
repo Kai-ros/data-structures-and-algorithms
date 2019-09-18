@@ -8,12 +8,18 @@ public class Library {
 
     public static void main(String[] args)
     {
+        ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
         LinkedList linkedList1 = new LinkedList();
         linkedList1.append(1);
         linkedList1.append(2);
         linkedList1.append(3);
         linkedList1.append(4);
         linkedList1.append(5);
+
+        System.out.println(linkedList1);
+        System.out.println(reverseLinkedList.reverseLinkedListInPlace(linkedList1));
+        System.out.println(reverseLinkedList.reverseLinkedListInPlace(linkedList1));
+
 
         LinkedList linkedList2 = new LinkedList();
         linkedList2.append(6);
@@ -29,21 +35,7 @@ public class Library {
         linkedList3.append(14);
         linkedList3.append(15);
 
-        System.out.println(linkedList1.toString());
-        System.out.println(linkedList2.toString());
 
-        linkedList1.mergeLists(linkedList1, linkedList2);
-        System.out.println(linkedList1.toString());
-        System.out.println(linkedList2.toString());
-
-        linkedList1.mergeLists(linkedList3, linkedList1);
-        System.out.println(linkedList3.toString());
-
-//        Node result = linkedList1.mergeLists(linkedList1, linkedList2);
-//        Node listHead = linkedList1.head;
-//        System.out.println(result);
-//        System.out.println(listHead);
-//        System.out.println(linkedList1.toString());
 
     }
 }
