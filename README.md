@@ -25,6 +25,7 @@ This root README is where the links to daily work should live.
 * [Stacks and Queues](./data-structures/stacksandqueues/readmes/stacksandqueues_README.md)
 * [Trees](./data-structures/tree/readmes/trees_README.md)
 * [Hashtable](./data-structures/readmes/hashtable_README.md)
+* [Graph](./data-structures/readmes/graph_README.md)
 
 ## ALGORITHMS
 

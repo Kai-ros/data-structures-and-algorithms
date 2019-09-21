@@ -11,8 +11,8 @@ Implement a Hashtable with the following methods:
 
 ## Approach & Efficiency
 I implemented what I believe to be a standard hash table template.
-Time Complexity: O(1) - Average / O(n) - Worst
-Space Complexity: O(n)
+* Time Complexity: O(1) - Average / O(n) - Worst
+* Space Complexity: O(n)
 
 ## API
 * -- Hashtable.java
