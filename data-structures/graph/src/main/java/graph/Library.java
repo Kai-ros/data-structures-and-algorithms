@@ -3,8 +3,10 @@
  */
 package graph;
 
-public class Library {
-    public boolean someLibraryMethod() {
-        return true;
+public class Library
+{
+    public static void main(String[] args)
+    {
+
     }
 }
