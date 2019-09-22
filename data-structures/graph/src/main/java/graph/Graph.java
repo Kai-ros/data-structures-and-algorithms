@@ -10,6 +10,7 @@ import java.util.Map;
 public class Graph <Type>
 {
     public int size = 0;
+    public List<Edge<Type>> edgeList;
     public HashMap< Vertex<Type>, List<Edge<Type>>> adjacencyList;
 
     public Graph() {}
@@ -17,13 +18,14 @@ public class Graph <Type>
     public Graph(int size)
     {
         this.size = size;
+        this.edgeList = new ArrayList<>();
         this.adjacencyList = new HashMap<>();
     }
 
     public Vertex <Type> addNode(Type value)
     {
         Vertex<Type> node = new Vertex<>(value);
-        adjacencyList.put(node, new ArrayList<>());
+        adjacencyList.put(node, edgeList);
         size++;
         return node;
     }
@@ -37,31 +39,19 @@ public class Graph <Type>
     // TODO: Fix PUT block
     public void addDirectedEdge(Vertex<Type> firstVertex, Vertex<Type> secondVertex, int weight)
     {
-        adjacencyList.put(firstVertex,
-                new Edge<Type>
-        {
-            weight = weight,
-            Vertex = secondVertex,
-        });
+        adjacencyList.put(firstVertex, edgeList.add(new Edge(weight, secondVertex)));
 
     }
 
-    // TODO: Fix IF block
     public List<Vertex<Type>> getNodes()
     {
         List<Vertex<Type>> vertices = new ArrayList<>();
-
         for(Map.Entry< Vertex<Type>, List<Edge<Type>>> vertex : adjacencyList.entrySet())
         {
             Vertex<Type> node = vertex.getKey();
             vertices.add(node);
-
-            if (node.equals(node))
-            {
-                return vertices;
-            }
         }
-        return  null;
+        return  vertices;
     }
 
     public List<Edge<Type>> getNeighbors(Vertex<Type> value)
@@ -74,7 +64,6 @@ public class Graph <Type>
         return this.size;
     }
 
-    // TODO: Fix inner FOR block
     public String toString()
     {
         StringBuilder outputMessage = new StringBuilder();
@@ -83,10 +72,11 @@ public class Graph <Type>
         {
             outputMessage.append("Vertex " + vertex.getKey().value + " ->");
 
-//            vertex.forEach( vertex.getValue() -> outputMessage.append(edge.vertex + "," + edge.weight + " ->"));
-
+            for (int i = 0; i < adjacencyList.size(); i++)
+            {
+                outputMessage.append(vertex.getKey() + "," + vertex.getValue() + " ->");
+            }
         }
-
         return outputMessage.toString();
     }
 }
