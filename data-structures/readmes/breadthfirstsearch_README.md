@@ -8,5 +8,8 @@ Implement a breadth-first traversal on a graph.
 * Time Complexity: O(n^2)
 * Space Complexity: O(n)
 
+## Solution
+* ![BFS White board](../graph/src/main/resources/graphBFS.jpg)
+
 ## Collaborators
 * Padmapriya Ganapathi
