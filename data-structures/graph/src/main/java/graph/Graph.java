@@ -48,7 +48,11 @@ public class Graph <Type>
         List<Edge<Type>> edgeList = adjacencyList.get(firstVertex);
         if (edgeList == null)
         {
-            throw new IllegalArgumentException("source vertex not in graph");
+            throw new IllegalArgumentException("Source vertex not in graph");
+        }
+        if (secondVertex == null)
+        {
+            throw new IllegalArgumentException("Destination vertex not in graph");
         }
         Edge<Type> newEdge = new Edge<>(weight, secondVertex);
         edgeList.add(newEdge);
@@ -59,7 +63,7 @@ public class Graph <Type>
         for(Map.Entry<Vertex<Type>, List<Edge<Type>>> vertex : adjacencyList.entrySet())
         {
             Vertex<Type> node = vertex.getKey();
-            if (node.equals(value))
+            if (node.value.equals(value))
             {
                 return node;
             }
@@ -67,9 +71,9 @@ public class Graph <Type>
         return null;
     }
 
-    public List<Vertex<Type>> getNodes()
+    public ArrayList<Vertex<Type>> getNodes()
     {
-        List<Vertex<Type>> vertices = new ArrayList<>();
+        ArrayList<Vertex<Type>> vertices = new ArrayList<>();
         for(Map.Entry< Vertex<Type>, List<Edge<Type>>> vertex : adjacencyList.entrySet())
         {
             Vertex<Type> node = vertex.getKey();
@@ -78,28 +82,34 @@ public class Graph <Type>
         return  vertices;
     }
 
-    public List<Edge<Type>> getNeighbors(Vertex<Type> value)
+    public ArrayList<Edge<Type>> getNeighbors(Vertex<Type> value)
     {
-        return adjacencyList.get(value);
+        return (ArrayList) adjacencyList.get(value);
     }
 
-    public int size() {
-
+    public int size()
+    {
         return this.size;
+    }
+
+    public boolean isEmpty()
+    {
+        return (this.size == 0) ? true : false;
     }
 
     public String toString()
     {
         StringBuilder outputMessage = new StringBuilder();
 
-        for(Map.Entry< Vertex<Type>, List<Edge<Type>>> vertex : adjacencyList.entrySet())
+        for(Map.Entry< Vertex<Type>, List<Edge<Type>>> entry : adjacencyList.entrySet())
         {
-            outputMessage.append("Vertex " + vertex.getKey().value + " ->");
+            outputMessage.append("Vertex: " + entry.getKey().value + " -> \n");
 
-            for (int i = 0; i < adjacencyList.size(); i++)
+            for (Edge<Type> edge : entry.getValue())
             {
-                outputMessage.append(vertex.getKey() + "," + vertex.getValue() + " ->");
+                outputMessage.append("Edge: " + edge.vertex.value + ", "  +  edge.weight + " -> \n");
             }
+
         }
         return outputMessage.toString();
     }
