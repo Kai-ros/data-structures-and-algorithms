@@ -3,8 +3,35 @@
  */
 package graph;
 
-public class Library {
-    public boolean someLibraryMethod() {
-        return true;
+import java.util.List;
+
+public class Library
+{
+    public static void main(String[] args)
+    {
+        Graph<String> graph = new Graph<>();
+
+        Vertex<String> node1 = graph.addNode("Washington");
+        Vertex<String> node2 = graph.addNode("Montana");
+        Vertex<String> node3 = graph.addNode("North Dakota");
+
+        graph.addUnDirectedEdge(node1, node2, 10);
+        graph.addUnDirectedEdge(node2, node3, 5);
+        graph.addUnDirectedEdge(node3, node1, 20);
+
+
+        System.out.println(graph.toString());
+
+        System.out.println("=== Just Washington ====");
+
+        Vertex vertex = graph.getVertex("Washington");
+        List<Edge<String>> neighbors = graph.getNeighbors(vertex);
+
+
+
+        List<Vertex<String>> listOfVer = graph.getNodes();
+        graph.toString();
+        System.out.println("Nothing broke.");
+
     }
 }
