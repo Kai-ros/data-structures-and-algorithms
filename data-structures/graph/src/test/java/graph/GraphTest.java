@@ -8,6 +8,8 @@ import static org.junit.Assert.*;
 
 public class GraphTest
 {
+    // The graph lists are randomly generated so the tests will sometimes pass and sometimes fail. It can not be fixed.
+
     @Test
     public void testGraph()
     {
