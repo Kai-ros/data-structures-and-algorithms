@@ -10,25 +10,32 @@ import java.util.Map;
 public class Graph <Type>
 {
     public int size = 0;
-    public List<Edge<Type>> edgeList;
     public HashMap< Vertex<Type>, List<Edge<Type>>> adjacencyList;
 
-    public Graph() {}
+    public Graph()
+    {
+        this(0);
+    }
 
     public Graph(int size)
     {
         this.size = size;
-        this.edgeList = new ArrayList<>();
         this.adjacencyList = new HashMap<>();
     }
 
-    public Vertex <Type> addNode(Type value)
+    public Vertex<Type> addNode(Type value)
     {
+        if (value == null)
+        {
+            throw new IllegalArgumentException("null");
+        }
         Vertex<Type> node = new Vertex<>(value);
-        adjacencyList.put(node, edgeList);
+        adjacencyList.put(node, new ArrayList<>());
         size++;
+
         return node;
     }
+
 
     public void addUnDirectedEdge(Vertex<Type> firstVertex, Vertex<Type> secondVertex, int weight)
     {
@@ -36,11 +43,28 @@ public class Graph <Type>
         addDirectedEdge(secondVertex, firstVertex, weight);
     }
 
-    // TODO: Fix PUT block
     public void addDirectedEdge(Vertex<Type> firstVertex, Vertex<Type> secondVertex, int weight)
     {
-        adjacencyList.put(firstVertex, edgeList.add(new Edge(weight, secondVertex)));
+        List<Edge<Type>> edgeList = adjacencyList.get(firstVertex);
+        if (edgeList == null)
+        {
+            throw new IllegalArgumentException("source vertex not in graph");
+        }
+        Edge<Type> newEdge = new Edge<>(weight, secondVertex);
+        edgeList.add(newEdge);
+    }
 
+    public Vertex<Type> getVertex(Type value)
+    {
+        for(Map.Entry<Vertex<Type>, List<Edge<Type>>> vertex : adjacencyList.entrySet())
+        {
+            Vertex<Type> node = vertex.getKey();
+            if (node.equals(value))
+            {
+                return node;
+            }
+        }
+        return null;
     }
 
     public List<Vertex<Type>> getNodes()

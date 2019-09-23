@@ -13,7 +13,6 @@ public class Edge <Type>
         this.weight = weight;
         this.vertex = vertex;
     }
-
 }
 
 // Resources
