@@ -3,6 +3,8 @@
  */
 package graph;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Library
@@ -22,16 +24,20 @@ public class Library
 
         System.out.println(graph.toString());
 
-        System.out.println("=== Just Washington ====");
 
         Vertex vertex = graph.getVertex("Washington");
         List<Edge<String>> neighbors = graph.getNeighbors(vertex);
 
+        System.out.println("Neighbors: " + neighbors.get(0).vertex.value);
+        System.out.println("Neighbors: " + neighbors.get(1).vertex.value);
 
 
-        List<Vertex<String>> listOfVer = graph.getNodes();
-        graph.toString();
-        System.out.println("Nothing broke.");
+        List<Vertex<String>> listOfVertices = graph.getNodes();
+        System.out.println("Vertex List: " + listOfVertices.get(0).value);
+        System.out.println("Vertex List: " + listOfVertices.get(1).value);
+        System.out.println("Vertex List: " + listOfVertices.get(2).value);
+
+        System.out.println("\nNothing broke.");
 
     }
 }
