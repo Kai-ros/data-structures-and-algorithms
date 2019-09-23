@@ -18,7 +18,7 @@ This root README is where the links to daily work should live.
 * [Repeated Word](./data-structures/readmes/repeatedword_README.md)
 * [Tree Intersection](./data-structures/readmes/treeintersection_README.md)
 * [Left Join](./data-structures/readmes/leftjoin_README.md)
-
+* [Breadth First Search Graph](./data-structures/readmes/breadthfirstsearch_README.md)
 
 ### Labs
 * [Singly Linked List](./data-structures/linked-list/linkedlist_README.md)

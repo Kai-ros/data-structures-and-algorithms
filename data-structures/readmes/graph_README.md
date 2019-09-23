@@ -34,7 +34,11 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 * -- Graph.java
 * ---- Graph()
 * ---- addNode()
-* ---- addEdge()
+* ---- addUnDirectedEdge()
+* ---- addDirectedEdge()
+* ---- getVertex()
 * ---- getNodes()
+* ---- getNeighbors()
 * ---- size()
+* ---- isEmpty()
 * ---- toString()
