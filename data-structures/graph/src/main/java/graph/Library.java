@@ -11,6 +11,43 @@ public class Library
 {
     public static void main(String[] args)
     {
+        Graph<String> citiesGraph = new Graph<>();
+        GetEdge directFlight = new GetEdge();
+
+        Vertex<String> pandora = citiesGraph.addNode("Pandora");
+        Vertex<String> narnia = citiesGraph.addNode("Narnia");
+        Vertex<String> arendelle = citiesGraph.addNode("Arendelle");
+        Vertex<String> monstropolis = citiesGraph.addNode("Monstropolis");
+        Vertex<String> metroville = citiesGraph.addNode("Metroville");
+        Vertex<String> naboo = citiesGraph.addNode("Naboo");
+
+        citiesGraph.addUnDirectedEdge(pandora, arendelle, 150);
+        citiesGraph.addUnDirectedEdge(pandora, metroville, 82);
+        citiesGraph.addUnDirectedEdge(arendelle, metroville, 99);
+        citiesGraph.addUnDirectedEdge(arendelle, monstropolis, 42);
+        citiesGraph.addUnDirectedEdge(metroville, monstropolis, 105);
+        citiesGraph.addUnDirectedEdge(metroville, narnia, 37);
+        citiesGraph.addUnDirectedEdge(metroville, naboo, 26);
+        citiesGraph.addUnDirectedEdge(monstropolis, naboo, 73);
+        citiesGraph.addUnDirectedEdge(naboo, narnia, 250);
+
+        // True, $82
+        Vertex[] flightPath1 = new Vertex[] { metroville, pandora};
+        // True, $115
+        Vertex[] flightPath2 = new Vertex[] { arendelle, monstropolis, naboo };
+        // False, $0
+        Vertex[] flightPath3 = new Vertex[] { naboo, pandora };
+        // False, $0
+        Vertex[] flightPath4 = new Vertex[] { narnia, arendelle, naboo };
+        // True, $515
+        Vertex[] flightPath5 = new Vertex[] { pandora, arendelle, monstropolis, naboo, narnia };
+
+        System.out.println(directFlight.directFlight(citiesGraph, flightPath1));
+        System.out.println(directFlight.directFlight(citiesGraph, flightPath2));
+        System.out.println(directFlight.directFlight(citiesGraph, flightPath3));
+        System.out.println(directFlight.directFlight(citiesGraph, flightPath4));
+        System.out.println(directFlight.directFlight(citiesGraph, flightPath5));
+
         System.out.println("\nNothing broke.");
     }
 }
