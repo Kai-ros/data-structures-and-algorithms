@@ -141,6 +141,55 @@ public class BinaryTree <Type>
         }
         return maximumValue;
     }
+
+    ArrayList<Node> listDuplicates(BinaryTree binaryTree)
+    {
+        ArrayList<Type> originals = new ArrayList<>();
+        ArrayList<Type> duplicates = new ArrayList<>();
+        return listDuplicatesRecursive(binaryTree.root, originals, duplicates);
+    }
+
+    ArrayList<Node> listDuplicatesRecursive(Node<Type> current, ArrayList originals, ArrayList duplicates)
+    {
+        if (current != null)
+        {
+            if (originals.contains(current.dataValue))
+            {
+                duplicates.add(current.dataValue);
+            }
+            else
+            {
+                originals.add(current.dataValue);
+            }
+            listDuplicatesRecursive(current.leftChild, originals, duplicates);
+            listDuplicatesRecursive(current.rightChild, originals, duplicates);
+        }
+        return duplicates;
+    }
+
+    public static ArrayList<Node> listDuplicatesIterative(BinaryTree binaryTree) {
+        List<Type> originals = new ArrayList<>();
+        List<Type> duplicates = new ArrayList<>();
+        Queue<Node<Type>> nodeQueue = new LinkedList<>();
+        nodeQueue.enqueue(tree.root);
+
+        while (!nodeQueue.isEmpty()) {
+            Node<V> current = nodeQueue.dequeue();
+            if (current.getLeft() != null) {
+                nodeQueue.enqueue(current.getLeft());
+            }
+            if (current.getRight() != null) {
+                nodeQueue.enqueue(current.getRight());
+            }
+
+            if (originals.contains(current.getValue())) {
+                duplicates.add(current.getValue());
+            } else {
+                originals.add(current.getValue());
+            }
+        }
+        return duplicates;
+    }
 }
 
 // Resources:
