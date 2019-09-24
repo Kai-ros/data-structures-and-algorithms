@@ -82,9 +82,9 @@ public class Graph <Type>
         return  vertices;
     }
 
-    public ArrayList<Edge<Type>> getNeighbors(Vertex<Type> value)
+    public ArrayList<Edge<Type>> getNeighbors(Vertex<Type> vertex)
     {
-        return (ArrayList) adjacencyList.get(value);
+        return (ArrayList) adjacencyList.get(vertex);
     }
 
     public int size()
