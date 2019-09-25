@@ -113,6 +113,88 @@ public class Graph <Type>
         }
         return outputMessage.toString();
     }
+
+    public List<Type> depthFirstSearchIterative(Vertex<Type> startNode)
+    {
+        if (startNode == null)
+        {
+            return null;
+        }
+        Stack<Vertex<Type>> stack = new Stack<Vertex<Type>>() {};
+        List<Vertex<Type>> visitedNodes = new ArrayList<>();
+        List<Type> returnList = new ArrayList<>();
+
+        stack.push(startNode);
+        visitedNodes.add(startNode);
+
+        while (stack.size() > 0)
+        {
+            Vertex<Type> currentNode = stack.pop();
+            List<Edge<Type>> neighbors = this.getNeighbors(currentNode);
+
+            for (Edge<Type> neighbor : neighbors)
+            {
+                Vertex<Type> neighborNode = neighbor.vertex;
+                if (visitedNodes.contains(neighborNode))
+                {
+                    continue;
+                }
+                else
+                {
+                    visitedNodes.add(neighborNode);
+                }
+                stack.push(neighborNode);
+            }
+        }
+        for(Vertex<Type> node : visitedNodes)
+        {
+            returnList.add(node.value);
+        }
+
+        return returnList;
+    }
+
+    public List<Type> depthFirstSearchRecursiveWrapper(Vertex<Type> startNode)
+    {
+        if (startNode == null)
+        {
+            return null;
+        }
+
+        List<Vertex<Type>> visitedNodes = new ArrayList<>();
+        List<Type> returnList = new ArrayList<>();
+
+        visitedNodes.add(startNode);
+        depthFirstSearchRecursive(startNode, visitedNodes);
+
+        for(Vertex<Type> node : visitedNodes)
+        {
+            returnList.add(node.value);
+        }
+
+        return returnList;
+    }
+
+    public List<Vertex<Type>> depthFirstSearchRecursive(Vertex<Type> currentNode, List<Vertex<Type>> visitedNodes)
+    {
+        List<Edge<Type>> neighbors = this.getNeighbors(currentNode);
+
+        for (Edge<Type> neighbor : neighbors)
+        {
+            Vertex<Type> neighborNode = neighbor.vertex;
+            if (visitedNodes.contains(neighborNode))
+            {
+                continue;
+            }
+            else
+            {
+                visitedNodes.add(neighborNode);
+            }
+            depthFirstSearchRecursive(neighborNode, visitedNodes);
+        }
+
+        return visitedNodes;
+    }
 }
 
 // Resources
