@@ -1,4 +1,4 @@
-# Hashtables
+# Graphs
 Implement a breadth-first traversal on a graph.
 
 ## Challenge

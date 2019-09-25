@@ -1,4 +1,4 @@
-# Hashtables
+# Graphs
 Implement a Graph
 
 ## Challenge
