@@ -156,4 +156,62 @@ public class GraphTest
                         "Edge: Test node 1, 20 -> \n",
                 testGraph.toString());
     }
+
+    @Test
+    public void testGraph_DFSIterative()
+    {
+        Graph<String> graph = new Graph<>();
+
+        Vertex<String> a = graph.addNode("A");
+        Vertex<String> b = graph.addNode("B");
+        Vertex<String> c = graph.addNode("C");
+        Vertex<String> d = graph.addNode("D");
+        Vertex<String> e = graph.addNode("E");
+        Vertex<String> f = graph.addNode("F");
+        Vertex<String> g = graph.addNode("G");
+        Vertex<String> h = graph.addNode("H");
+
+        graph.addUnDirectedEdge(a, b, 0);
+        graph.addUnDirectedEdge(a, d, 0);
+        graph.addUnDirectedEdge(b, d, 0);
+        graph.addUnDirectedEdge(b, c, 0);
+        graph.addUnDirectedEdge(c, g, 0);
+        graph.addUnDirectedEdge(d, e, 0);
+        graph.addUnDirectedEdge(d, h, 0);
+        graph.addUnDirectedEdge(d, f, 0);
+
+        assertEquals(
+                "toString() successfully returns all data from graph.",
+                "[A, B, D, E, H, F, C, G]",
+                graph.depthFirstSearchIterative(a).toString());
+    }
+
+    @Test
+    public void testGraph_DFSRecursive()
+    {
+        Graph<String> graph = new Graph<>();
+
+        Vertex<String> a = graph.addNode("A");
+        Vertex<String> b = graph.addNode("B");
+        Vertex<String> c = graph.addNode("C");
+        Vertex<String> d = graph.addNode("D");
+        Vertex<String> e = graph.addNode("E");
+        Vertex<String> f = graph.addNode("F");
+        Vertex<String> g = graph.addNode("G");
+        Vertex<String> h = graph.addNode("H");
+
+        graph.addUnDirectedEdge(a, b, 0);
+        graph.addUnDirectedEdge(a, d, 0);
+        graph.addUnDirectedEdge(b, d, 0);
+        graph.addUnDirectedEdge(b, c, 0);
+        graph.addUnDirectedEdge(c, g, 0);
+        graph.addUnDirectedEdge(d, e, 0);
+        graph.addUnDirectedEdge(d, h, 0);
+        graph.addUnDirectedEdge(d, f, 0);
+
+        assertEquals(
+                "toString() successfully returns all data from graph.",
+                "[A, B, D, E, H, F, C, G]",
+                graph.depthFirstSearchRecursiveWrapper(a).toString());
+    }
 }
